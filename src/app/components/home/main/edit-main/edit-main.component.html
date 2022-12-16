@@ -1,0 +1,15 @@
+<div class="information">
+
+    <form action="" [formGroup]="form" (ngSubmit)="onSave(form.value)">
+        <div>
+            <input #nombre formControlName="nombre" id="nombre" type="text" placeholder="nombre">
+            <input #apellido formControlName="apellido" id="nombre" type="text" placeholder="apellido">
+        </div>
+        <input #titulo formControlName="titulo" id="titulo" type="text" placeholder="titulo">
+
+        <textarea #presentacion formControlName="presentacion" id="about" rows="3" placeholder="about me"> </textarea>
+
+        <button type="submit">save</button>
+    </form>
+
+</div>

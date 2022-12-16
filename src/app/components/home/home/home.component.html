@@ -1,0 +1,46 @@
+<div class="page1">
+
+
+    <app-header (propagar)="recibirDato($event)"></app-header>
+
+    <!-- cuadro de usuario -->
+    <div class="banner">
+        <!-- invitado -->
+        <div class="guest" *ngIf="isGuest">
+            <p>you are a guest :(</p>
+            <button routerLink="/login" id="login">
+                login
+            </button>
+            <button routerLink="/new-account" id="signUp">
+                sign up
+            </button>
+        </div>
+
+        
+        <!-- usuario -->
+
+        <div class="user" *ngIf="isUser">
+            <div class="recuadro">
+            <p>Hi Usuario</p>
+
+            <a routerLink="/new-account">View profile</a> <br>
+            <a routerLink="/login">Exit</a>
+        
+            </div>
+        </div>
+
+
+        <!-- admin -->
+        <div class="admin" *ngIf="isAdmin">
+            <p>¡congratulations!</p>
+            <p>you are the admin ;)</p>
+            <button routerLink="/login">log out</button>
+        </div>
+
+    </div>
+
+    <app-main></app-main>
+    <app-skills></app-skills>
+    <app-education></app-education>
+    <app-footer></app-footer>
+</div>

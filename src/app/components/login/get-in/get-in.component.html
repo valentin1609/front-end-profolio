@@ -1,0 +1,27 @@
+<main>
+
+    <div class="form">
+        <div class="head">
+            <h1>WELCOME!</h1>
+            
+        </div>
+        
+        <form action="" [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+            <div class="input">
+                <img src="./../../../../assets/images/user-line.png" alt="">
+                <input type="text" placeholder="username" formControlName="username">
+            </div><div class="input">
+                <img src="./../../../../assets/images/lock-line.png" alt="">
+                <input type="password" placeholder="password" formControlName="password">
+            </div>
+
+            <button type="submit" [disabled]="loginForm.invalid" >log in</button>
+        </form>
+        
+        <div class="foot">
+            <a routerLink="/">enter as a guest</a>
+        </div>
+    </div>
+
+
+</main>

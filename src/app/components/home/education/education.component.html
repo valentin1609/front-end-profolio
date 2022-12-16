@@ -1,0 +1,35 @@
+<main>
+    <div class="principal">
+        <div class="center">
+
+            <div class="head">
+                <h1>Education</h1>
+                <div id="edit" (click)="onEdit()">
+                    <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt="">
+                    <img *ngIf="!mostrar" src="./../../../../assets/images/close-fill.png" alt="">
+                </div>
+            </div>
+
+            <div *ngIf="!mostrar">
+                <app-edit-education></app-edit-education>
+            </div>
+
+            <div *ngIf="mostrar">
+                <div class="items" *ngFor="let edu of education">
+
+                    <div class="item">
+                        <div class="date">
+                            {{edu.fin}}
+                        </div>
+                        <div>
+                            {{edu.nombre}} | {{edu.instituto}}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</main>

@@ -1,0 +1,7 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
+
+<input formControlName="nombre" type="text">
+<input formControlName="nivel" type="range" min="1" max="4">
+<button type="submit">save</button>
+
+</form>

@@ -1,0 +1,6 @@
+div{
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    background-color: rgb(27, 27, 27);
+}
