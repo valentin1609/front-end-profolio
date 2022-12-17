@@ -27,16 +27,15 @@ form : FormGroup;
     this.addSkill(value);
   }
 
-  
   addSkill(skill : Skills) {
-    this.servSkills.addSkill(skill);
+    this.servSkills.addSkill(skill).subscribe();
   }
 
   editSkill(skill : Skills){
-    this.servSkills.editSkill(skill);
+    this.servSkills.editSkill(skill).subscribe();
   }
   deleteSkill(id:number){
-    this.servSkills.deleteSkill(id);
+    this.servSkills.deleteSkill(id).subscribe();
   }
 
 }

@@ -16,9 +16,8 @@ export class InformationService {
   }
   
 
-  public editInformation(info: Information): Observable<any>{
-    console.log(info);
-    return this.http.put<any>(this.url + "edit/", info)
+  public editInformation(info: any) : Observable<any> {
+    return this.http.put(this.url + "edit", info)
   }
 
 }

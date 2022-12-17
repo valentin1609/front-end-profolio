@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { InformationService } from 'src/app/services/information.service';
 import { Information } from 'src/app/services/informationModel';
@@ -16,6 +16,7 @@ export class EditMainComponent implements OnInit {
 
   form : FormGroup;
   info?: Information;
+  @Output() save = new EventEmitter<any>();
 
   constructor(private servInformation : InformationService, private formBuilder : FormBuilder) {
      this.nombre = new ElementRef('input');
@@ -48,17 +49,16 @@ export class EditMainComponent implements OnInit {
 
 
   onSave(value:Information){
-    if(value.nombre==null && value.apellido==null && value.titulo==null && value.presentacion==null)
-    {
-      console.log('formulario nulo');
-      //this.router.navigateByUrl('/');
-      // RouterLink to main / event emiter mostar to main
-    }
-    else{
       value.id = 1;
       value.foto = "";
-      this.servInformation.editInformation(value);
-    }
+      this.servInformation.editInformation(value).subscribe(
+        (data) => {
+              console.log(data)}, 
+        (error) => {
+              console.log(error)}
+      );
+
+      this.save.emit(true);
   }
 
 }

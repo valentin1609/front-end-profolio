@@ -15,20 +15,20 @@ public getSkills(): Observable <Skills[]> {
   return this.http.get<Skills[]>(this.url + "getAll");
 }
 
-public addSkill(skill: Skills): Observable<any>{
-  return this.http.post<any>(this.url + "add", skill)
-}
-
-// public addSkill(skill: any){
-//   return this.http.post(this.url + "add", skill)
+// public addSkill(skill: Skills): Observable<any>{
+//   return this.http.post<any>(this.url + "add", skill)
 // }
 
+public addSkill(skill: Skills){
+  return this.http.post(this.url + "add", skill)
+}
 
-public editSkill(skill: Skills): Observable<any>{
+
+public editSkill(skill: Skills){
   return this.http.put<any>(this.url + "edit", skill)
 }
 
-public deleteSkill(id: number): Observable<any>{
+public deleteSkill(id: number){
 //  return this.http.delete<any>(this.url + `delete/${id}`)
   return this.http.delete<any>(this.url + "delete/" + `${id}`)
 }

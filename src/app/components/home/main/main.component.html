@@ -27,7 +27,7 @@
                 <!-- <button *ngIf="!mostrar" (click)="onSave()">save</button> -->
             </div>
             <div *ngIf="!mostrar">
-                <app-edit-main></app-edit-main>
+                <app-edit-main (save)="onSave($event)"></app-edit-main>
             </div>
 
         </div>
