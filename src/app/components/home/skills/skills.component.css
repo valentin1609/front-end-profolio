@@ -18,19 +18,41 @@ main {
   position: relative;
 }
 
-.bars {
-  width: 80%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 10px;
+
+/* seccion skills */
+.seccionskills{
+width: 80%;
+display: flex;
+justify-content: center;
 }
 
+.mainskills{
+  width: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.bars {
+  width: 20vw;
+  min-width: 230px;
+}
+
+@media only screen and (max-width: 735px){
+  .mainskills{
+    justify-content: center; 
+  }
+}
+
+
+/* progress bars */
 .skill {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
-
 .bars-container {
   background-color: black;
   border: solid 2px white;
@@ -50,6 +72,8 @@ main {
   justify-content: center;
 }
 
+
+/* seccion other skills and lenguages */
 .others {
   width: 70%;
   margin-bottom: 10px;
@@ -75,6 +99,8 @@ h3 {
   padding: 10px 10%;
 }
 
+
+/* boton edit */
 #edit {
   height: 2em;
   aspect-ratio: 1/1;

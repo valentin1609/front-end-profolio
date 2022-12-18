@@ -6,9 +6,10 @@ import { LoginComponent } from './components/login/login/login.component';
 import { NewAccountComponent } from './components/login/new-account/new-account.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'new-account', component: NewAccountComponent},
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: '**', component: Error404Component}
 ];
 

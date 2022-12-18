@@ -1,44 +1,49 @@
-<div class="items">
-
+<div class="items" *ngFor="let edu of education">
     <div class="item">
-        <div class="date">
-            07/2019
-        </div>
-        <div>
-            Bachiller en administracion y economia | insc
-        </div>
-        <div class="change">
-        <div id="modify">
-            <img  src="./../../../../../assets/images/edit-fill.png" alt="">
-        </div>
-        <div id="modify">
-            <img  src="./../../../../../assets/images/close-fill.png" alt="">
-        </div>
-    </div>
-            
-        
-    </div>
-    <div class="item">
-        <div class="date">
-            07/2019
-        </div>
-        <div>
-            bachiller en administracion y economia | insc
-        </div>
-    </div>
-    <div class="item">
-        <div class="date">
-            07/2019
-        </div>
-        <div>
-            bachiller en administracion y economia | insc
-        </div>
-    </div>
 
-    <div >
-        <div class="addIcon">
-            <img src="./../../../../../assets/images/close-fill.png" alt="">
+        <div class="date">
+            {{edu.fin}}
         </div>
-    </div>
 
+        <div>
+            {{edu.nombre}} |
+            {{edu.instituto}}
+        </div>
+
+        <button (click)="onDelete(edu.id)">
+            <img src="../../../../../assets/images/close-fill.png" alt="">
+        </button>
+    </div>
 </div>
+<div class="items">
+    <div class="item">
+
+        <div class="date">
+            <button (click)="onAdd()" *ngIf="mostrar">
+                <img src="../../../../../assets/images/add-line.png" alt="">
+            </button>
+        </div>
+
+        <form *ngIf="!mostrar" [formGroup]="form" (ngSubmit)="onSave(form.value)">
+
+            <div class="item" >
+        
+                <div class="date">
+                    <input #fin formControlName="fin" type="text" placeholder="">
+                </div>
+        
+                <div>
+                    <input #nombre formControlName="nombre" type="text" placeholder="">
+                    <input #instituto formControlName="instituto" type="text" placeholder="">
+                </div>
+        
+                <button type="submit" >
+                    <img src="../../../../../assets/images/check-fill.png" alt="">
+                </button>
+            </div>
+        
+        </form>
+
+    </div>
+</div>
+

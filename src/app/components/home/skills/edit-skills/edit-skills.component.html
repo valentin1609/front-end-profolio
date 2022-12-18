@@ -1,3 +1,23 @@
+<div *ngFor="let skill of skills">
+<ul>
+    <li>
+        nombre: {{ skill.nombre }}
+        nivel: {{ skill.nivel }}
+        id: {{ skill.id }}
+        <button>
+            edit
+        </button>
+        <button (click)="deleteSkill(skill.id)">
+            delete
+        </button>
+    </li>
+</ul>
+
+</div>
+
+
+
+
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
 
 <input formControlName="nombre" type="text">

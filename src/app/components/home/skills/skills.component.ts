@@ -15,13 +15,10 @@ export class SkillsComponent implements OnInit {
   constructor(private servSkills:SkillsService) {}
 
   ngOnInit(): void {
-
     this.getSkills();
-    
   }
 
  
-
   getSkills():void{
     this.servSkills.getSkills().subscribe(data => { 
       this.skills = data;
@@ -29,10 +26,12 @@ export class SkillsComponent implements OnInit {
   }
 
 
-  
   mostrar = true;
   onEdit() {
     this.mostrar = !this.mostrar;
+    if(this.mostrar == true){
+      this.ngOnInit();
+    }
   }
 
   getNivel(skill : Skills):any{

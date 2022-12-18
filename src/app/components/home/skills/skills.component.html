@@ -1,30 +1,42 @@
 <main>
     <div class="principal">
-        
-        <div id="edit" (click)="onEdit()">
-            <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt="">
-            <img *ngIf="!mostrar" src="./../../../../assets/images/close-fill.png" alt="">
-        </div>
+        <!-- header -->
+        <div class="header">
+
+            <div id="edit" (click)="onEdit()">
+                <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt="">
+                <img *ngIf="!mostrar" src="./../../../../assets/images/check-fill.png" alt="">
+            </div>
 
 
-        <h1>Skills</h1>
-        <div *ngIf="!mostrar">
-            <app-edit-skills></app-edit-skills>   
-        </div>
-
-        <div class="bars" *ngFor="let skill of skills">
-
-            <div class="skill" *ngIf="mostrar">
-                <p>{{skill.nombre}}</p>
-                <div class="bars-container">
-                    <div class="progress" [ngStyle]="{'width': getNivel(skill)}">
-                        {{nivelObtenido(skill)}}
-                    </div>
-                </div>
+            <h1>Skills</h1>
+            <div *ngIf="!mostrar">
+                <app-edit-skills></app-edit-skills>
             </div>
 
         </div>
 
+        <!-- skills -->
+        <div class="seccionskills">
+            <div class="mainskills">
+
+                <div class="bars" *ngFor="let skill of skills">
+
+                    <div class="skill" *ngIf="mostrar">
+                        <p>{{skill.nombre}}</p>
+                        <div class="bars-container">
+                            <div class="progress" [ngStyle]="{'width': getNivel(skill)}">
+                                {{nivelObtenido(skill)}}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <!-- other skills -->
         <div class="others">
             <h3>Others:</h3>
             <div *ngIf="mostrar">

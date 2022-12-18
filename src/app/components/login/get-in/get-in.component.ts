@@ -20,7 +20,7 @@ export class GetInComponent implements OnInit {
 
   onLogin(values:any){
     console.log(values);
-    this.router.navigateByUrl("/")
+    this.router.navigateByUrl("/home")
   }
 
   ngOnInit(): void {

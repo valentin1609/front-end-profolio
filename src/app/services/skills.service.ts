@@ -29,7 +29,6 @@ public editSkill(skill: Skills){
 }
 
 public deleteSkill(id: number){
-//  return this.http.delete<any>(this.url + `delete/${id}`)
   return this.http.delete<any>(this.url + "delete/" + `${id}`)
 }
 

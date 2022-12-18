@@ -63,31 +63,3 @@ main {
 #edit img {
   width: 100%;
 }
-
-.addIcon{
-  height: 2em;
-  margin: 5px;
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  padding: 5px;
-  align-items: center;
-  background-color: aliceblue;
-  cursor: pointer;
-}
-
-#modify{
-  height: 1em;
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  align-items: center;
-  background-color: aliceblue;
-  cursor: pointer;
-  margin: 3px;
-}
-
-.change{
-  display: flex;
-  margin-left: auto;
-  align-items: flex-start;
-  padding: 5px;
-}

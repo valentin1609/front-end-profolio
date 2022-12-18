@@ -17,16 +17,16 @@ export class EducationService {
     return this.http.get<Education[]>(this.url + "getAll");
   }
   
-  public addEducation(education: Education): Observable<any>{
-    return this.http.post<any>(this.url + "add", education)
+  public addEducation(education: Education){
+    return this.http.post(this.url + "add", education)
   }
   
-  public editEducation(education: Education): Observable<any>{
-    return this.http.put<any>(this.url + "edit", education)
+  public editEducation(education: Education){
+    return this.http.put(this.url + "edit", education)
   }
   
-  public deleteEducation(id: number): Observable<any>{
-    return this.http.delete<any>(this.url + "delete/" + `${id}`)
+  public deleteEducation(id: number){
+    return this.http.delete(this.url + "delete/" + `${id}`)
   }
 
 

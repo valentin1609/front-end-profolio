@@ -15,16 +15,13 @@
 
             <div *ngIf="mostrar">
                 <h1 *ngIf="mostrar" class="items">Hi, I'm <label> {{perfil?.nombre}} {{perfil?.apellido}} </label> </h1>
-                <!-- <input *ngIf="!mostrar" id="nombre" type="text" placeholder="nombre"> -->
 
                 <p *ngIf="mostrar" class="items">{{perfil?.titulo}}</p>
-                <!-- <input *ngIf="!mostrar" id="titulo" type="text" placeholder="titulo"> -->
-
+                
                 <p *ngIf="mostrar" class="items">{{perfil?.presentacion}}</p>
-                <!-- <textarea *ngIf="!mostrar" id="about" rows="3" placeholder="about me"> </textarea> -->
-
+                
                 <button *ngIf="mostrar" class="items">contact</button>
-                <!-- <button *ngIf="!mostrar" (click)="onSave()">save</button> -->
+                
             </div>
             <div *ngIf="!mostrar">
                 <app-edit-main (save)="onSave($event)"></app-edit-main>
