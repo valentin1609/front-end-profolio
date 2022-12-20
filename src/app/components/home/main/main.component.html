@@ -1,32 +1,46 @@
 <main>
+
     <div class="principal">
 
-
-        <div class="profile">
-            <div class="imgdiv">
-                <img src="./../../../../assets/images/perfil.jpg" alt="">
-            </div>
-        </div>
-        <div class="information">
+        <div class="header">
             <div id="edit" (click)="onEdit()">
                 <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt="">
                 <img *ngIf="!mostrar" src="./../../../../assets/images/close-fill.png" alt="">
             </div>
+        </div>
+        <div class="showInfo" *ngIf="mostrar">
 
-            <div *ngIf="mostrar">
-                <h1 *ngIf="mostrar" class="items">Hi, I'm <label> {{perfil?.nombre}} {{perfil?.apellido}} </label> </h1>
+            <div class="profile">
+                <div class="imgdiv">
+                    <img [src]="perfilimg" alt="">
+                </div>
+                <div class="headInfoMovile">
+                    <h1 class="items">Hi, I'm <label> {{perfil?.nombre}} {{perfil?.apellido}} </label> </h1>
 
-                <p *ngIf="mostrar" class="items">{{perfil?.titulo}}</p>
-                
-                <p *ngIf="mostrar" class="items">{{perfil?.presentacion}}</p>
-                
-                <button *ngIf="mostrar" class="items">contact</button>
-                
+                    <p class="items">{{perfil?.titulo}}</p>
+                </div>
             </div>
-            <div *ngIf="!mostrar">
-                <app-edit-main (save)="onSave($event)"></app-edit-main>
-            </div>
 
+            <div class="information">      
+
+                    <div class="headInfo">
+                        
+                        <h1 class="items">Hi, I'm <label> {{perfil?.nombre}} {{perfil?.apellido}} </label> </h1>
+
+                        <p class="items">{{perfil?.titulo}}</p>
+                    </div>
+
+                    <p id="presentacion" class="items">{{perfil?.presentacion}}</p>
+
+                    <button id="contact" class="items">contact</button>
+
+            </div>
+        </div>
+
+        <div *ngIf="!mostrar">
+            <app-edit-main (save)="onSave($event)"></app-edit-main>
         </div>
     </div>
+
+
 </main>

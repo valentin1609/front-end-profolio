@@ -14,6 +14,9 @@ export class EditMainComponent implements OnInit {
   @ViewChild("titulo") titulo : ElementRef;
   @ViewChild("presentacion") presentacion : ElementRef;
 
+  perfilimg = "./../../../../assets/images/perfil.jpg"
+
+
   form : FormGroup;
   info?: Information;
   @Output() save = new EventEmitter<any>();

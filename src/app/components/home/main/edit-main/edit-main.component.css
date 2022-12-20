@@ -1,39 +1,88 @@
-.information{
-    padding: 20px;
+form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.profile{
+padding: 1em;
+height: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+    }
+    .imgdiv{
+        width: 100%;
+        min-width: 10vw;
+        max-width: 30vw;
+    }
+    .imgdiv img{
+        width: 100%;
+    }
+    .inputdiv{
+    max-width: 30vw;
+    height: 3em;
+    width: 100%;
+    padding: 0px 1.5em;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    position: relative;
-}
+    justify-content: center;
+        }
+        .profile input{
+            width: 80%;
+            min-width: 15vw;
+            height: 2em;
+            background-color: black;
+            color: white;
+            border: solid 2px white;
+        }
+        .profile button{
+           
+            height: 2em;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
 
-button{
-    background-color: black;
-    padding: 10px 20px;
-    border: 2px solid white;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
+.information{
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+    }
+    h1{
+        display: inline-block;
+    }
+    input, textarea {
+        margin: 20px 0 20px 0;
+        background-color: black;
+        color: white;
+        border: solid 2px white;
+    }
+    #nombre {
+        width: 40%;
+        font-size: 1.5em;
+        margin-top: 30px;
+        text-align: center;
+    }
+    #titulo {
+        width: 30%;
+        font-size: 1em;
+        text-align: center;
+    }
+    #about {
+        width: 90%;
+        padding: 5px;
+    }
+    .information button{
+        background-color: black;
+        padding: 10px 20px;
+        border: 2px solid white;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
-input, textarea {
-    margin: 20px 0 20px 0;
-    background-color: black;
-    color: white;
-    border: solid 2px white;
-}
 
-#nombre {
-    width: 40%;
-    font-size: 1.5em;
-    margin-top: 30px;
-    text-align: center;
-}
-#titulo {
-    width: 30%;
-    font-size: 1em;
-    text-align: center;
-}
-#about {
-    width: 90%;
-    padding: 5px;
-}
+
+

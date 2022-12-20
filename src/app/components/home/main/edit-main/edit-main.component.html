@@ -1,15 +1,29 @@
-<div class="information">
+<form [formGroup]="form" (ngSubmit)="onSave(form.value)">
 
-    <form action="" [formGroup]="form" (ngSubmit)="onSave(form.value)">
+    <div class="profile">
+        <div class="imgdiv">
+            <img [src]="perfilimg" alt="">
+        </div>
+        
+        <div class="inputdiv">
+            <input #foto id="foto" type="url">
+            <button>add</button>
+        </div>
+    </div>
+
+    <div class="information">
         <div>
+            <h1>Hi, I'm</h1> 
             <input #nombre formControlName="nombre" id="nombre" type="text" placeholder="nombre">
             <input #apellido formControlName="apellido" id="nombre" type="text" placeholder="apellido">
         </div>
+
         <input #titulo formControlName="titulo" id="titulo" type="text" placeholder="titulo">
 
         <textarea #presentacion formControlName="presentacion" id="about" rows="3" placeholder="about me"> </textarea>
 
         <button type="submit">save</button>
-    </form>
+    </div>
 
-</div>
+
+</form>

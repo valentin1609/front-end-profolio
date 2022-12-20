@@ -10,6 +10,8 @@ import { Information } from 'src/app/services/informationModel';
 })
 export class MainComponent implements OnInit, OnDestroy {
 
+  perfilimg = "./../../../../assets/images/perfil.jpg"
+
   private subs? : Subscription;
 
   perfil? : Information;

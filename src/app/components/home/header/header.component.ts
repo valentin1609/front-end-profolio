@@ -18,6 +18,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  mostrar = true;
+  onMenu(){
+    this.mostrar = !this.mostrar;
+  }
+
   onUser(){
     let user = "user";
     this.propagar.emit(user)
