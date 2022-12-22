@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/services/auth-service.service';
 import { InformationService } from 'src/app/services/information.service';
 import { Information } from 'src/app/services/informationModel';
 
@@ -15,7 +16,7 @@ export class MainComponent implements OnInit, OnDestroy {
   private subs? : Subscription;
 
   perfil? : Information;
-  constructor(private servInformation: InformationService) {
+  constructor(private servInformation: InformationService, private authService: AuthService) {
   }
   
 
@@ -28,6 +29,7 @@ export class MainComponent implements OnInit, OnDestroy {
         this.perfil = data;
       } )
     );
+
   }
 
   ngOnDestroy(): void {

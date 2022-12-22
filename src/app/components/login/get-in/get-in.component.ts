@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth-service.service';
 
 @Component({
   selector: 'app-get-in',
@@ -11,16 +12,25 @@ export class GetInComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private authService:AuthService) {
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     })
   }
 
-  onLogin(values:any){
-    console.log(values);
-    this.router.navigateByUrl("/home")
+  onLogin(event:Event){
+    event.preventDefault; //cortamos el flujo normal del evento
+    this.authService.login(this.loginForm.value).subscribe( () => {
+
+    console.log(this.authService.UsuarioAutenticado.authorities);
+    //y si todo esta bien redirige al porfolio
+      this.router.navigateByUrl("/home")
+    }, (error) => {
+      console.log(error)
+    }
+    )
+
   }
 
   ngOnInit(): void {

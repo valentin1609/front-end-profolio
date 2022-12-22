@@ -24,7 +24,7 @@
             <p>Hi Usuario</p>
 
             <a routerLink="/new-account">View profile</a> <br>
-            <a routerLink="/login">Exit</a>
+            <a (click)="onlogOut()" >Exit</a>
         
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="admin" *ngIf="isAdmin">
             <p>¡congratulations!</p>
             <p>you are the admin ;)</p>
-            <button routerLink="/login">log out</button>
+            <button (click)="onlogOut()">log out</button>
         </div>
 
     </div>

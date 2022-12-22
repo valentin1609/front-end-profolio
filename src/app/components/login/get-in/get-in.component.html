@@ -6,7 +6,7 @@
             
         </div>
         
-        <form action="" [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+        <form action="" [formGroup]="loginForm" (ngSubmit)="onLogin($event)" >
 
             <!-- username -->
             <div class="input">
