@@ -14,13 +14,10 @@ export class InterceptorService implements HttpInterceptor {
     
     var userAuth = this.authService.UsuarioAutenticado;
     if(userAuth != null) {
-      console.log(req);
       req = req.clone({  //setteamos el header de la request y le agregamos el token el usuario
         setHeaders: {Authorization: `Bearer ${userAuth.token}`}
       });
     }
-    console.log(userAuth);
-    console.log(req);
 
     return next.handle(req);
   }

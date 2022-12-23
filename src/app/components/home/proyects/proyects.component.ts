@@ -12,4 +12,10 @@ export class ProyectsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  title : string = 'Proyect';
+  url: string = 'http://sedfs.com';
+  description : String = "Lorem ipsum dolor sit amet, consectetur adipisicing elit,  sed do eiusmod tempor incididunt ut   labore et dolore magna aliqua."
+
+
+
 }

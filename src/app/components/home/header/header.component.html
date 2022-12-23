@@ -9,19 +9,20 @@
     <div class="header-right">
 
         <div class="seccions">
-            <button>home</button>
+            <button  routerLink="/home"
+            [ngStyle]="{'border-bottom': ruta == '/home' ? 'solid 3px white' : ''}">
+                home</button>
         </div>
-        <div class="seccions">
-            <button>skills</button>
 
+        <div class="seccions" >
+            <button routerLink="/proyects" 
+            [ngStyle]="{'border-bottom': ruta == '/proyects' ? 'solid 3px white' : ''}">
+            proyects</button>
         </div>
-        <div class="seccions">
-            <button>proyects</button>
-
-        </div>
-        <div class="seccions">
-            <button>contacts</button>
-
+        <div class="seccions" >
+            <button routerLink="/experience" 
+            [ngStyle]="{'border-bottom': ruta == '/experience' ? 'solid 3px white' : ''}">
+            experience</button>
         </div>
 
         <div id="link">
@@ -29,9 +30,12 @@
         </div>
 
         <div id="user">
-            <img *ngIf="isUser" src="./../../../../assets/images/user-line.png" alt="usuario" (click)="onUser()">
-            <img *ngIf="isAdmin" src="./../../../../assets/images/user-star-line.png" alt="admin" (click)="onAdmin()">
-            <img *ngIf="isGuest" src="./../../../../assets/images/spy-line.png" alt="invitado" (click)="onGuest()">
+           <label *ngIf="isUser" (click)="onUser()"> <i class="fa-solid fa-user"></i> </label>
+            <!-- <img *ngIf="isUser" src="./../../../../assets/images/user-line.png" alt="usuario" (click)="onUser()"> -->
+           <label *ngIf="isAdmin" (click)="onAdmin()"> <i class="fa-solid fa-user-tie"></i> </label>
+            <!-- <img *ngIf="isAdmin" src="./../../../../assets/images/user-star-line.png" alt="admin" (click)="onAdmin()"> -->
+            <label *ngIf="isGuest" (click)="onGuest()"> <i class="fa-solid fa-user-secret"></i> </label>
+            <!-- <img *ngIf="isGuest" src="./../../../../assets/images/spy-line.png" alt="invitado" (click)="onGuest()"> -->
         </div>
         <div class="menuIcon" (click)="onMenu()">
             <img src="./../../../../assets/images/menu-line.png" alt="">
@@ -39,18 +43,20 @@
 
         <div class="menuMovile" *ngIf="!mostrar">
             <div class="seccionMovile">
-                <a href="">home</a>
+                <a routerLink="/home"
+                [ngStyle]="{'border-bottom': ruta == '/home' ? 'solid 3px white' : ''}">
+                home</a>
             </div>
             <div class="seccionMovile">
-                <a href="">skills</a>
+                <a routerLink="/proyects"
+                [ngStyle]="{'border-bottom': ruta == '/proyects' ? 'solid 3px white' : ''}">
+                proyects</a>
             </div>
             <div class="seccionMovile">
-                <a href="">proyects</a>
+                <a routerLink="/experience"
+                [ngStyle]="{'border-bottom': ruta == '/experience' ? 'solid 3px white' : ''}">
+                experience</a>
             </div>
-            <div class="seccionMovile">
-                <a href="">contacts</a>
-            </div>
-
             <div id="linkMovile">
                 <button>GitHub</button>
             </div>

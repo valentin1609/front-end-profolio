@@ -16,8 +16,16 @@ export class EducationComponent implements OnInit, OnDestroy{
 
   constructor(private servEducation : EducationService) { }
 
+  edit? : boolean;
+
   ngOnInit(): void {
     this.getEducationlist();
+
+    let userAuth = JSON.parse( sessionStorage.getItem('user') || '{}' );
+    if (userAuth.authorities) {
+      if (userAuth.authorities.length == 2) {this.edit = true}
+    } 
+    else {this.edit = false}
   }
 
   ngOnDestroy(): void {

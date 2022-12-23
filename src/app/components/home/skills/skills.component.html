@@ -3,9 +3,11 @@
         <!-- header -->
         <div class="header">
 
-            <div id="edit" (click)="onEdit()">
-                <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt="">
-                <img *ngIf="!mostrar" src="./../../../../assets/images/check-fill.png" alt="">
+            <div *ngIf="edit" id="edit" (click)="onEdit()">
+                <!-- <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt=""> -->
+                <label *ngIf="mostrar"><i  class="fa-solid fa-pen"></i> </label>
+                <!-- <img *ngIf="!mostrar" src="./../../../../assets/images/check-fill.png" alt=""> -->
+                <label *ngIf="!mostrar"><i  class="fa-solid fa-check"></i> </label>
             </div>
 
 

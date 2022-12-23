@@ -14,8 +14,16 @@ export class SkillsComponent implements OnInit {
 
   constructor(private servSkills:SkillsService) {}
 
+  edit? : boolean;
+
   ngOnInit(): void {
     this.getSkills();
+
+    let userAuth = JSON.parse( sessionStorage.getItem('user') || '{}' );
+    if (userAuth.authorities) {
+      if (userAuth.authorities.length == 2) {this.edit = true}
+    } 
+    else {this.edit = false}
   }
 
  

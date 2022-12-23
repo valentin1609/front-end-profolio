@@ -4,9 +4,11 @@
 
             <div class="head">
                 <h1>Education</h1>
-                <div id="edit" (click)="onEdit()">
-                    <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt="">
-                    <img *ngIf="!mostrar" src="./../../../../assets/images/close-fill.png" alt="">
+                <div *ngIf="edit" id="edit" (click)="onEdit()">
+                    <!-- <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt=""> -->
+                    <label *ngIf="mostrar"><i  class="fa-solid fa-pen"></i> </label>
+                    <!-- <img *ngIf="!mostrar" src="./../../../../assets/images/close-fill.png" alt=""> -->
+                    <label *ngIf="!mostrar"> <i class="fa-solid fa-xmark"></i> </label>
                 </div>
             </div>
 

@@ -11,13 +11,17 @@ import { Information } from 'src/app/services/informationModel';
 })
 export class MainComponent implements OnInit, OnDestroy {
 
-  perfilimg = "./../../../../assets/images/perfil.jpg"
+  perfilimg = "https://i.ibb.co/MnQ8v1n/perfil.jpg"
+
+ 
 
   private subs? : Subscription;
 
   perfil? : Information;
   constructor(private servInformation: InformationService, private authService: AuthService) {
   }
+
+  edit? : boolean;
   
 
   ngOnInit(): void {
@@ -30,6 +34,12 @@ export class MainComponent implements OnInit, OnDestroy {
       } )
     );
 
+    let userAuth = JSON.parse( sessionStorage.getItem('user') || '{}' );
+      console.log(userAuth);
+      if (userAuth.authorities) {
+        if (userAuth.authorities.length == 2) {this.edit = true}
+      } 
+      else {this.edit = false}
   }
 
   ngOnDestroy(): void {

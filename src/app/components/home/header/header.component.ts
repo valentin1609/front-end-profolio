@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,9 @@ export class HeaderComponent implements OnInit {
   isAdmin?: boolean;
   isGuest?: boolean;
 
-  constructor() {}
+  constructor(private router : Router) {}
+
+  ruta? : String;
 
   ngOnInit(): void {
     let userAuth = JSON.parse( sessionStorage.getItem('user') || '{}' );
@@ -22,6 +25,9 @@ export class HeaderComponent implements OnInit {
         if (userAuth.authorities.length == 2) {this.admin()}
       } 
       else {this.guest()}
+
+
+      this.ruta = this.router.url;
   }
   
 

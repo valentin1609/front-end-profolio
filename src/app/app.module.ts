@@ -25,6 +25,7 @@ import { EditSkillsComponent } from './components/home/skills/edit-skills/edit-s
 import { InterceptorService } from './services/interceptor.service';
 import { ProyectsComponent } from './components/home/proyects/proyects.component';
 import { ProfileComponent } from './components/home/profile/profile.component';
+import { ExperienceComponent } from './components/home/experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProfileComponent } from './components/home/profile/profile.component';
     EditMainComponent,
     EditSkillsComponent,
     ProyectsComponent,
-    ProfileComponent
+    ProfileComponent,
+    ExperienceComponent
   ],
   imports: [
     BrowserModule,
