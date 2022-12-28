@@ -1,0 +1,31 @@
+<table>
+    <tbody>
+        <tr *ngFor="let idiom of idioms">
+            <td>
+                <li>{{ idiom.nombre }}
+                </li>
+            </td>
+            <td>{{ idiom.nivel }}</td>
+            <td>
+                <button (click)="deleteIdiom(idiom.id)">
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+    <div>  
+            <input formControlName="nombre" type="text">
+            <input formControlName="nivel" type="text">
+
+            <button type="submit">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+    </div>
+
+</form>

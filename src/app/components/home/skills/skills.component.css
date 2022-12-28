@@ -24,6 +24,7 @@ main {
 width: 80%;
 display: flex;
 justify-content: center;
+margin-bottom: 10px;
 }
 
 .mainskills{
@@ -73,33 +74,6 @@ justify-content: center;
 }
 
 
-/* seccion other skills and lenguages */
-.others {
-  width: 70%;
-  margin-bottom: 10px;
-}
-
-.others div {
-  display: flex;
-  flex-wrap: wrap;
-}
-li {
-  min-width: fit-content;
-  width: 10%;
-  padding: 5px 10px;
-}
-
-h3 {
-  margin: 5px;
-}
-
-.languages {
-  border: solid 1px white;
-  width: 100%;
-  padding: 10px 10%;
-}
-
-
 /* boton edit */
 #edit {
   position: absolute;
@@ -115,4 +89,13 @@ h3 {
   align-items: center;
   aspect-ratio: 1/1;
   color: black;
+}
+
+
+.sub-page {
+  border: solid 1px white;
+  width: 100%;
+  padding: 10px 10%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }

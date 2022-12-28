@@ -1,0 +1,9 @@
+main div {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+li {
+    width: fit-content;
+    padding: 5px 10px;
+  }

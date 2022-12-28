@@ -1,51 +1,52 @@
-<div class="items" *ngFor="let edu of education">
+<div class="item-container" *ngFor="let edu of education">
     <div class="item">
+        <div class="info">
+            <div class="date">
+                {{edu.fin}}
+            </div>
 
-        <div class="date">
-            {{edu.fin}}
+            <div>
+                {{edu.nombre}} |
+                {{edu.instituto}}
+            </div>
         </div>
-
-        <div>
-            {{edu.nombre}} |
-            {{edu.instituto}}
-        </div>
-
         <button (click)="onDelete(edu.id)">
-            <!-- <img src="../../../../../assets/images/close-fill.png" alt=""> -->
             <i class="fa-solid fa-trash-can"></i>
         </button>
     </div>
 </div>
-<div class="items">
-    <div class="item">
 
-        <div class="date">
-            <button (click)="onAdd()" *ngIf="mostrar">
-                <!-- <img src="../../../../../assets/images/add-line.png" alt=""> -->
-                <i class="fa-solid fa-square-plus"></i>
-            </button>
-        </div>
+<div class="item-container">
 
-        <form *ngIf="!mostrar" [formGroup]="form" (ngSubmit)="onSave(form.value)">
+    <div class="date">
+        <button (click)="onAdd()" *ngIf="mostrar">
+            <i class="fa-solid fa-square-plus"></i>
+        </button>
+    </div>
 
-            <div class="item" >
-        
+    <!--  -->
+    <form *ngIf="!mostrar" [formGroup]="form" (ngSubmit)="onSave(form.value)">
+
+        <div class="item">
+
+            <div class="info">
+
                 <div class="date">
                     <input #fin formControlName="fin" type="text" placeholder="">
                 </div>
-        
-                <div>
+                <div class="input-nombre">
                     <input #nombre formControlName="nombre" type="text" placeholder="">
                     <input #instituto formControlName="instituto" type="text" placeholder="">
                 </div>
-        
-                <button type="submit" >
-                    <i  class="fa-solid fa-check"></i>
-                </button>
+
             </div>
-        
-        </form>
 
-    </div>
+            <button type="submit">
+                <i class="fa-solid fa-check"></i>
+            </button>
+
+        </div>
+
+    </form>
+
 </div>
-

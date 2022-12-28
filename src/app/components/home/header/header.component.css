@@ -1,137 +1,134 @@
-.header{
-    background-color: rgb(0, 0, 0);
-    height: 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.header {
+  background-color: rgb(0, 0, 0);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
-.header-right{
-    display: flex;
-    justify-content: space-evenly;
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2em;
+  width: 100%;
+  margin-right: 1em;
 }
 
 .header-right div {
-    cursor: pointer;
-    margin: 0 1em;
-
+  cursor: pointer;
 }
 
 .logo {
-    height: 70px;
-    align-items: center;
-    margin-left: 15px;
+  height: 70px;
+  align-items: center;
+  margin-left: 15px;
 }
 
 button {
-    font-weight: 400;
-    font-size: 20px;
-    background-color: black;
-    padding-bottom: 0px;
-    margin-bottom: 0px;
-    color: white;
-    cursor: pointer;
+  font-weight: 400;
+  font-size: 20px;
+  background-color: black;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  color: white;
+  cursor: pointer;
 }
 
 .seccions button:hover {
-    border-bottom: solid 2px white;
-    transition: ease-in-out 0.5s;
+  border-bottom: solid 2px white;
+  transition: ease-in-out 0.5s;
 }
-a{
-    color: white;
-    border: solid 1px white;
-    padding: 5px;
-    font-style: medium;
-    font-size: 16px;
-    cursor: pointer;
+a {
+  color: white;
+  border: solid 1px white;
+  padding: 5px;
+  font-style: medium;
+  font-size: 16px;
+  cursor: pointer;
 }
 a:hover {
-    background-color: white;
-    color: black;
-    transition: ease-in-out 0.3s;
-    box-shadow: 1px 1px 5px white;
+  background-color: white;
+  color: black;
+  transition: ease-in-out 0.3s;
+  box-shadow: 1px 1px 5px white;
 }
-#link{
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
-
-#user{
-    margin-right: 15px;
-    font-size: 1.5em;
-    display: flex;
-    align-items: center;
-    
-}
-#user label{
-    cursor: pointer;
+#link {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-
+#user {
+  margin-right: 15px;
+  font-size: 1.5em;
+  display: flex;
+  align-items: center;
+}
+#user label {
+  cursor: pointer;
+}
 
 /* menu de hamburgesa */
-.menuIcon{
-    display: none;
+.menuIcon {
+  display: none;
 }
 /* menu desplegado */
-.menuMovile{
-    display: none;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    background-color: rgb(0, 0, 0);
-    height: 100%;
-    width: 100%;
+.menuMovile {
+  display: none;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
 }
 
-.menuMovile div{
-    margin: 1em 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.menuMovile div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
 }
 /* links del navbar */
-.menuMovile a{
-border: none;
-width: 80%;
-height: 100%;
-display: flex;
-justify-content: center;
+.menuMovile a {
+  border: none;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
-.menuMovile a:hover{
-    font-weight: 600;
-
+.menuMovile a:hover {
+  font-weight: 600;
 }
 /* github */
-#linkMovile{
-    background-color: black;
+#linkMovile {
+  background-color: black;
 }
-#linkMovile button{
-    width: 60%;
-    background-color: black;
+#linkMovile button {
+  width: 60%;
+  background-color: black;
 }
-#linkMovile button:hover{
-    border: 2px solid white;
-    transition: ease-in-out 0.5s;
+#linkMovile button:hover {
+  border: 2px solid white;
+  transition: ease-in-out 0.5s;
 }
 
-
-
-@media only screen and (max-width: 850px){
-.menuIcon{
-        display: block;
-        display: flex;
-        align-items: center;
-}
-.seccions, #link {
+@media only screen and (max-width: 850px) {
+  .menuIcon {
+    display: block;
+    display: flex;
+    align-items: center;
+  }
+  .seccions,
+  #link {
     display: none;
-}
-.menuMovile{
+  }
+  .menuMovile {
     display: flex;
     flex-direction: column;
-}
-
   }
+  .header-right {
+    gap: 0;
+  }
+}

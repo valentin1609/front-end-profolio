@@ -1,0 +1,10 @@
+td{
+    padding: 5px;
+}
+
+input{
+    width: 5em;
+    margin: 0 1em;
+    background-color: black;
+    color: white;
+}

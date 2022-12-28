@@ -31,17 +31,15 @@
 
         <div id="user">
            <label *ngIf="isUser" (click)="onUser()"> <i class="fa-solid fa-user"></i> </label>
-            <!-- <img *ngIf="isUser" src="./../../../../assets/images/user-line.png" alt="usuario" (click)="onUser()"> -->
            <label *ngIf="isAdmin" (click)="onAdmin()"> <i class="fa-solid fa-user-tie"></i> </label>
-            <!-- <img *ngIf="isAdmin" src="./../../../../assets/images/user-star-line.png" alt="admin" (click)="onAdmin()"> -->
             <label *ngIf="isGuest" (click)="onGuest()"> <i class="fa-solid fa-user-secret"></i> </label>
-            <!-- <img *ngIf="isGuest" src="./../../../../assets/images/spy-line.png" alt="invitado" (click)="onGuest()"> -->
         </div>
         <div class="menuIcon" (click)="onMenu()">
             <img src="./../../../../assets/images/menu-line.png" alt="">
         </div>
 
         <div class="menuMovile" *ngIf="!mostrar">
+            
             <div class="seccionMovile">
                 <a routerLink="/home"
                 [ngStyle]="{'border-bottom': ruta == '/home' ? 'solid 3px white' : ''}">

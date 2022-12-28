@@ -1,18 +1,18 @@
 export class Information {
 
 id?:number;    
-nombre:String;
-apellido:String;
-titulo:String;
-presentacion:String;
-foto:String;
+nombre:string;
+apellido:string;
+titulo:string;
+presentacion:string;
+foto:string;
 
 constructor(
-    nombre:String,
-    apellido:String,
-    titulo:String,
-    presentacion:String,
-    foto:String)
+    nombre:string,
+    apellido:string,
+    titulo:string,
+    presentacion:string,
+    foto:string)
 {
 this.nombre = nombre;
 this.apellido = apellido;

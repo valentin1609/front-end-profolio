@@ -5,9 +5,9 @@
 
             <div *ngIf="edit" id="edit" (click)="onEdit()">
                 <!-- <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt=""> -->
-                <label *ngIf="mostrar"><i  class="fa-solid fa-pen"></i> </label>
+                <label *ngIf="mostrar"><i class="fa-solid fa-pen"></i> </label>
                 <!-- <img *ngIf="!mostrar" src="./../../../../assets/images/check-fill.png" alt=""> -->
-                <label *ngIf="!mostrar"><i  class="fa-solid fa-check"></i> </label>
+                <label *ngIf="!mostrar"><i class="fa-solid fa-check"></i> </label>
             </div>
 
 
@@ -38,26 +38,20 @@
             </div>
         </div>
 
+
         <!-- other skills -->
-        <div class="others">
-            <h3>Others:</h3>
-            <div *ngIf="mostrar">
-                <li> <label>Git & GitHub</label> </li>
-                <li>Figma</li>
-                <li>Scrum</li>
-                <li>JTW</li>
-                <li>Git & GitHub</li>
-                <li>Figma</li>
-                <li>Scrum</li>
-                <li>JTW</li>
+
+        <div class="sub-page">
+            <div>
+                <h3>Others:</h3>
+                <app-skills-others *ngIf="mostrar"></app-skills-others>
+                <app-edit-others *ngIf="!mostrar"></app-edit-others>
             </div>
-        </div>
-
-        <div class="languages">
-            <h3>Languages</h3>
-            <li>Spanish: Native</li>
-            <li>English: A2</li>
-
+            <div>
+                <h3>Languages</h3>
+                <app-skills-idioms *ngIf="mostrar"></app-skills-idioms>
+                <app-edit-idioms *ngIf="!mostrar"></app-edit-idioms>
+            </div>
         </div>
 
 

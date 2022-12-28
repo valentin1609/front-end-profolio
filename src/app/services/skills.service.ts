@@ -15,9 +15,6 @@ public getSkills(): Observable <Skills[]> {
   return this.http.get<Skills[]>(this.url + "getAll");
 }
 
-// public addSkill(skill: Skills): Observable<any>{
-//   return this.http.post<any>(this.url + "add", skill)
-// }
 
 public addSkill(skill: Skills){
   return this.http.post(this.url + "add", skill)

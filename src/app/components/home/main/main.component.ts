@@ -11,9 +11,6 @@ import { Information } from 'src/app/services/informationModel';
 })
 export class MainComponent implements OnInit, OnDestroy {
 
-  perfilimg = "https://i.ibb.co/MnQ8v1n/perfil.jpg"
-
- 
 
   private subs? : Subscription;
 
@@ -25,7 +22,7 @@ export class MainComponent implements OnInit, OnDestroy {
   
 
   ngOnInit(): void {
-   this.getInfo();   //llamo al servicio
+   this.getInfo();   //llamo al servicio con los datos
    //añado el servico a mis suscripciones:
    this.subs?.add(
     this.servInformation.getInformation().subscribe(data =>
@@ -35,7 +32,6 @@ export class MainComponent implements OnInit, OnDestroy {
     );
 
     let userAuth = JSON.parse( sessionStorage.getItem('user') || '{}' );
-      console.log(userAuth);
       if (userAuth.authorities) {
         if (userAuth.authorities.length == 2) {this.edit = true}
       } 
@@ -72,8 +68,8 @@ export class MainComponent implements OnInit, OnDestroy {
   //aca recibo el evento desde el componente hijo
   onSave(save:boolean){  
   //cuando presiono save en el edit-component se va resuscribir al servicio para que se actualice la informacion
-    this.ngOnInit();
     this.mostrar = save;
+    this.ngOnInit();
   }
 
 

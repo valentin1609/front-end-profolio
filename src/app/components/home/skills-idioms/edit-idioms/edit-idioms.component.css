@@ -1,0 +1,14 @@
+td{
+    padding: 5px;
+}
+
+input{
+    width: 5em;
+    background-color: black;
+    color: white;
+}
+
+form div{
+    display: flex;
+    gap: 1em;
+}

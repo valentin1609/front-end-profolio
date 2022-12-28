@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth-service.service';
+import { ProyectsService } from 'src/app/services/proyects.service';
+import { Proyect } from 'src/app/services/proyectsModel';
 
 @Component({
   selector: 'app-proyects',
@@ -7,14 +10,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProyectsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private servProyects: ProyectsService, private authService:AuthService) { }
+
+  edit? : boolean;
 
   ngOnInit(): void {
+    this.getProyects();
+
+    let userAuth = JSON.parse( sessionStorage.getItem('user') || '{}' );
+    if (userAuth.authorities) {
+      if (userAuth.authorities.length == 2) {this.edit = true}
+    } 
+    else {this.edit = false}
   }
 
-  title : string = 'Proyect';
-  url: string = 'http://sedfs.com';
-  description : String = "Lorem ipsum dolor sit amet, consectetur adipisicing elit,  sed do eiusmod tempor incididunt ut   labore et dolore magna aliqua."
+  proyects : Proyect[] = [];
+
+  getProyects(): void{
+    this.servProyects.getProyects().subscribe((data) => {
+      this.proyects = data;
+    })
+  }
+
+  mostrar = true;
+  onEdit() {
+    this.mostrar = !this.mostrar;
+  }
+
+
+  isUser: boolean = false;
+  isAdmin: boolean = false;
+  isGuest: boolean = false;
+
+  recibirDato(mje:string): void {
+    if(mje==="user"){
+        this.isUser = !this.isUser
+        this.isAdmin = false;
+        this.isGuest = false; 
+    }
+    if(mje==="admin"){
+      this.isAdmin = !this.isAdmin;
+      this.isUser = false;
+      this.isGuest = false;
+    }
+    if(mje==="guest"){
+      this.isGuest = !this.isGuest
+      this.isUser = false;
+      this.isAdmin = false;
+    }
+  }
+
+  onlogOut(): void {
+    this.authService.logOut();
+  }
+
 
 
 

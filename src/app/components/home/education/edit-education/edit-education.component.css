@@ -1,4 +1,4 @@
-.items {
+.item-container {
     border-left: solid 3px white;
     margin-left: 10%;
     margin-bottom: 10px;
@@ -6,11 +6,17 @@
   
   .item {
     display: flex;
+    justify-content: space-between;
     width: 100%;
     min-height: 2em;
     font-size: 1.5em;
   }
   
+  .info{
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
   .date {
     border-bottom: solid 1px white;
     width: fit-content;
@@ -18,13 +24,63 @@
     text-align: center;
   }
 
+  .date button{
+    color: white;
+    font-size: 2em;
+  }
 
 
   
+button{
+  background-color: transparent;
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
 
-input{
+
+ /*  */
+form .date {
+  width: 20%;
+} 
+form .date input {
+  width: 100%;
+}
+
+form .input-nombre{
+  margin: 0 5px;
+  width: 70%;
+  display: flex;
+}
+form .input-nombre input {
+  width: 80%;
+}
+
+form input{
     background-color: black;
     border: 1px solid white;
     height: 2em;
+    color: white;
+    margin: 5px;
 }
 
+
+@media only screen and (max-width: 600px){
+  .item {
+  font-size: 1.1em;
+  }
+  form .info{
+    display: flex;
+    flex-direction: column;
+  }
+  form .date{
+    width: 50%;
+    border: none;
+  }
+  form .input-nombre{
+    display: flex;
+    flex-direction: column;
+  }
+}

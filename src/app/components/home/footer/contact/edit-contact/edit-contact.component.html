@@ -1,0 +1,36 @@
+
+<table>
+    <tbody>
+        <tr *ngFor="let contact of contacts">
+            <td>
+                {{ contact.nombre }}:
+                
+            </td>
+            <td>
+                <a href="{{ contact.url }}">
+                    {{ contact.url }}
+                </a>
+                </td>
+            <td>
+                <button (click)="deleteContact(contact.id)">
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
+            </td>
+        </tr>
+
+    </tbody>
+
+</table>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+    <div>  
+            <input formControlName="nombre" type="text" id="nombre">
+            <input formControlName="url" type="text" id="url">
+
+            <button type="submit">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+    </div>
+
+</form>

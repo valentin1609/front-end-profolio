@@ -1,27 +1,36 @@
-<div *ngFor="let skill of skills">
-<ul>
-    <li>
-        nombre: {{ skill.nombre }}
-        nivel: {{ skill.nivel }}
-        id: {{ skill.id }}
-        <button>
-            edit
-        </button>
-        <button (click)="deleteSkill(skill.id)">
-            delete
-        </button>
-    </li>
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>level</th>
+            <th>delete</th>
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let skill of skills">
+            <td>{{ skill.nombre }}</td>
+            <td>{{ skill.nivel }}/4</td>
+            <td>
+                <button (click)="deleteSkill(skill.id)">
+                    <i class="fa-solid fa-delete-left"></i>
+                </button>
+            </td>
+        </tr>
 
-</div>
+    </tbody>
 
+</table>
 
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
 
+    <div>
+    <input formControlName="nombre" type="text"> 
+    <input formControlName="nivel" type="range" min="1" max="4" value="3" > 
 
-<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
+            <button type="submit">
+                <i class="fa-solid fa-plus"></i>
+            </button>
 
-<input formControlName="nombre" type="text">
-<input formControlName="nivel" type="range" min="1" max="4">
-<button type="submit">save</button>
+        </div>
 
 </form>

@@ -1,0 +1,12 @@
+form{
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+}
+
+#nombre {
+    width: 20%;
+}
+#url{
+    width: 70%
+}

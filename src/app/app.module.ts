@@ -26,6 +26,12 @@ import { InterceptorService } from './services/interceptor.service';
 import { ProyectsComponent } from './components/home/proyects/proyects.component';
 import { ProfileComponent } from './components/home/profile/profile.component';
 import { ExperienceComponent } from './components/home/experience/experience.component';
+import { SkillsOthersComponent } from './components/home/skills-others/skills-others.component';
+import { SkillsIdiomsComponent } from './components/home/skills-idioms/skills-idioms.component';
+import { EditIdiomsComponent } from './components/home/skills-idioms/edit-idioms/edit-idioms.component';
+import { EditOthersComponent } from './components/home/skills-others/edit-others/edit-others.component';
+import { EditContactComponent } from './components/home/footer/contact/edit-contact/edit-contact.component';
+import { EditProyectsComponent } from './components/home/proyects/edit-proyects/edit-proyects.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +53,13 @@ import { ExperienceComponent } from './components/home/experience/experience.com
     EditSkillsComponent,
     ProyectsComponent,
     ProfileComponent,
-    ExperienceComponent
+    ExperienceComponent,
+    SkillsOthersComponent,
+    SkillsIdiomsComponent,
+    EditIdiomsComponent,
+    EditOthersComponent,
+    EditContactComponent,
+    EditProyectsComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,50 @@
+<main>
+    <table>
+        <thead>
+            <th> </th>
+            <th> </th>
+            <th> </th>
+        </thead>
+        <tbody *ngFor="let proyect of proyects">
+
+            <div class="proyect">
+                <tr>
+                    <td>
+                        nombre:
+                    </td>
+                    <td>
+                        {{proyect.nombre}}
+                    </td>
+                    <td id="table-delete">
+                        <button (click)="deleteProyect(proyect.id)">
+                            <i class="fa-solid fa-delete-left"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>descripcion:</td>
+                    <td id="table-descripcion"> {{proyect.descripcion}} </td>
+                </tr>
+                <tr>
+                    <td>url: </td>
+                    <td> {{proyect.url}} </td>
+                </tr>
+            </div>
+
+        </tbody>
+
+    </table>
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+
+        <div>
+            <input formControlName="nombre" type="text" id="nombre" placeholder="nombre">
+            <textarea formControlName="descripcion" rows="3" id="descripcion" placeholder="descripcion">  </textarea>
+            <input formControlName="url" type="url" id="url" placeholder="url">
+            <button type="submit">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </div>
+
+    </form>
+</main>

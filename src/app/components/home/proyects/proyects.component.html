@@ -1,23 +1,69 @@
 <main>
-    <app-header></app-header>
+    <app-header (propagar)="recibirDato($event)"></app-header>
 
-    <div class="principal">
-
-        <section class="cards">
-
-            <div class="card" href="#">
-
-                <img class="card-img" src="https://source.unsplash.com/category/people/400x260" alt="People">
-                
-                <div class="card-text">
-                    <h4>{{title}}</h4>
-                    
-                    <p> {{description}} </p>
-                    <a href="{{url}}">{{url}}</a>
+            <!-- cuadro de usuario -->
+            <div class="banner">
+                <!-- invitado -->
+                <div class="guest" *ngIf="isGuest">
+                    <p>you are a guest :(</p>
+                    <button routerLink="/login" id="login">
+                        login
+                    </button>
+                    <button routerLink="/new-account" id="signUp">
+                        sign up
+                    </button>
                 </div>
+        
+                
+                <!-- usuario -->
+        
+                <div class="user" *ngIf="isUser">
+                    <div class="recuadro">
+                    <p>Hi Usuario</p>
+        
+                    <a routerLink="/new-account">View profile</a> <br>
+                    <a (click)="onlogOut()" >Exit</a>
+                
+                    </div>
+                </div>
+        
+        
+                <!-- admin -->
+                <div class="admin" *ngIf="isAdmin">
+                    <p>¡congratulations!</p>
+                    <p>you are the admin ;)</p>
+                    <button (click)="onlogOut()">log out</button>
+                </div>
+        
             </div>
 
-        </section>
+    <div class="principal">
+        <div class="head">
+            <div *ngIf="edit" id="edit" (click)="onEdit()">
+                <label *ngIf="mostrar"> <i class="fa-solid fa-pen"> </i> </label>
+                <label *ngIf="!mostrar"> <i class="fa-solid fa-xmark"> </i> </label>
+            </div>
+        </div>
+
+        <span *ngIf="mostrar">
+            <section class="cards" *ngFor="let proyect of proyects">
+
+                <div class="card" href="#">
+
+                    <img class="card-img" [src]="proyect.foto">
+
+                    <div class="card-text">
+                        <h4>{{proyect.nombre}}</h4>
+
+                        <p> {{proyect.descripcion}} </p>
+                        <a href="{{proyect.url}}">{{proyect.url}}</a>
+                    </div>
+                </div>
+
+            </section>
+        </span>
+
+        <app-edit-proyects *ngIf="!mostrar"></app-edit-proyects>
 
     </div>
 

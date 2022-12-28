@@ -4,9 +4,7 @@
 
         <div class="header">
             <div *ngIf="edit" id="edit" (click)="onEdit()">
-                <!-- <img *ngIf="mostrar" src="./../../../../assets/images/edit-fill.png" alt=""> -->
                 <label *ngIf="mostrar"><i  class="fa-solid fa-pen"></i> </label>
-                <!-- <img *ngIf="!mostrar" src="./../../../../assets/images/close-fill.png" alt=""> -->
                 <label *ngIf="!mostrar"> <i class="fa-solid fa-xmark"></i> </label>
             </div>
         </div>
@@ -14,7 +12,7 @@
 
             <div class="profile">
                 <div class="imgdiv">
-                    <img [src]="perfilimg" alt="">
+                    <img [src]="perfil?.foto" alt="">
                 </div>
                 <div class="headInfoMovile">
                     <h1 class="items">Hi, I'm <label> {{perfil?.nombre}} {{perfil?.apellido}} </label> </h1>

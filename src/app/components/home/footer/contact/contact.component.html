@@ -1,8 +1,19 @@
-<div>
-<h2>contact</h2>
+<main>
+    <div class="head">
+        <h2>contact</h2>
+        <div *ngIf="edit" id="edit" (click)="onEdit()">
+            <label *ngIf="mostrar"> <i class="fa-solid fa-pen"> </i> </label>
+            <label *ngIf="!mostrar"> <i class="fa-solid fa-xmark"> </i> </label>
+        </div>
+    </div>
 
-<a href="">linkedin</a>
-<a href="">email</a>
+    <span *ngIf="mostrar">
+        <div *ngFor="let contact of contacts">
+            <a href="{{contact.url}}">{{contact.nombre}}</a>
+        </div>
+    </span>
+    <app-edit-contact *ngIf="!mostrar"></app-edit-contact>
 
-<p>development by Valentin Arrua</p>
-</div>
+
+    <p>development by Valentin Arrua</p>
+</main>
