@@ -1,9 +1,11 @@
 main div {
-    display: inline-block;
-    margin-right: 20px;
+  display: inline-block;
+  margin-right: 20px;
 }
 
 li {
-    width: fit-content;
-    padding: 5px 10px;
-  }
+  width: fit-content;
+  padding: 5px 10px;
+}
+
+

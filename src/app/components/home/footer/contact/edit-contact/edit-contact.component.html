@@ -25,10 +25,10 @@
 <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
 
     <div>  
-            <input formControlName="nombre" type="text" id="nombre">
-            <input formControlName="url" type="text" id="url">
+            <input formControlName="nombre" type="text" id="nombre" placeholder="nombre">
+            <input formControlName="url" type="text" id="url" placeholder="url (max. 999 characters)">
 
-            <button type="submit">
+            <button type="submit" [disabled]="form.invalid">
                 <i class="fa-solid fa-plus"></i>
             </button>
     </div>

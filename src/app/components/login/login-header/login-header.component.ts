@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-header',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginHeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
+
+  ruta? : string;
 
   ngOnInit(): void {
+    this.ruta = this.router.url;
   }
 
 }

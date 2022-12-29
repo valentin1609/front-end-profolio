@@ -28,7 +28,7 @@
 
         <input formControlName="nombre" type="text">
         
-        <button type="submit">
+        <button type="submit"  [disabled]="form.invalid">
             <i class="fa-solid fa-plus"></i>
         </button>
 

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth-service.service';
 import { ProyectsService } from 'src/app/services/proyects.service';
 import { Proyect } from 'src/app/services/proyectsModel';
@@ -8,11 +9,13 @@ import { Proyect } from 'src/app/services/proyectsModel';
   templateUrl: './proyects.component.html',
   styleUrls: ['./proyects.component.css']
 })
-export class ProyectsComponent implements OnInit {
+export class ProyectsComponent implements OnInit, OnDestroy {
 
   constructor(private servProyects: ProyectsService, private authService:AuthService) { }
 
   edit? : boolean;
+
+  private subs?: Subscription;
 
   ngOnInit(): void {
     this.getProyects();
@@ -24,12 +27,22 @@ export class ProyectsComponent implements OnInit {
     else {this.edit = false}
   }
 
+  ngOnDestroy(): void {
+    this.subs?.unsubscribe();
+  }
+
   proyects : Proyect[] = [];
 
   getProyects(): void{
     this.servProyects.getProyects().subscribe((data) => {
       this.proyects = data;
     })
+
+    this.subs?.add(
+      this.servProyects.getProyects().subscribe((data) => {
+        this.proyects = data;
+      })
+    )
   }
 
   mostrar = true;

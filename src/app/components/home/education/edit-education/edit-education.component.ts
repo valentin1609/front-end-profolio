@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EducationService } from 'src/app/services/education.service';
 import { Education } from 'src/app/services/educationModel';
 
@@ -26,9 +26,9 @@ export class EditEducationComponent implements OnInit {
     this.fin = new ElementRef('input');
 
     this.form = this.formBuilder.group({
-      nombre: [],
-      instituto: [],
-      fin: [],
+      nombre: [,Validators.required],
+      instituto: [,Validators.required],
+      fin: [,Validators.required],
     });
   }
 
@@ -43,6 +43,7 @@ export class EditEducationComponent implements OnInit {
   onSave(form: any) {
     this.addEducation(form);
     this.onAdd();
+    this.form.reset();
   }
 
   onDelete(id: any) {

@@ -1,4 +1,6 @@
 .login { 
-    background-color: black;
+    background: url(../../../../assets/images/loginnuevo.jpg);
+    background-size: cover;
+    background-position: center;
     height: 100vh;
 }

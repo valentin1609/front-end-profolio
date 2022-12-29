@@ -7,6 +7,7 @@ import { ProfileComponent } from './components/home/profile/profile.component';
 import { ProyectsComponent } from './components/home/proyects/proyects.component';
 import { LoginComponent } from './components/login/login/login.component';
 import { NewAccountComponent } from './components/login/new-account/new-account.component';
+
 import { GuardGuard } from './services/guard.guard';
 
 const routes: Routes = [

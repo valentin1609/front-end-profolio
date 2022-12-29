@@ -1,8 +1,9 @@
 main {
   display: flex;
   justify-content: center;
-  background-color: rgb(0, 0, 0);
-  height: 100%;
+  min-height: 50vh;
+  height: fit-content;
+  padding-bottom: 10%;
 }
 
 .principal {
@@ -10,6 +11,8 @@ main {
   height: fit-content;
   min-height: 50px;
   width: 80%;
+  max-width: 1100px;
+  background-color: rgba(0, 0, 0, 0.6);
   border: solid 1px white;
   display: flex;
   align-items: center;
@@ -62,9 +65,18 @@ main {
   aspect-ratio: 1/1;
   color: black;
 }
+#edit label, #edit i {
+  cursor: pointer;
+}
 
 @media only screen and (max-width: 600px){
   .item {
   font-size: 1.1em;
+  }
+}
+
+@media only screen and (max-width: 850px){
+  main {
+    min-height: 20vh;
   }
 }

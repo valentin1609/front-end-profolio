@@ -12,3 +12,4 @@ form div{
     display: flex;
     gap: 1em;
 }
+form button[disabled]{background-color: grey;}

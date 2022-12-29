@@ -27,7 +27,7 @@
     <input formControlName="nombre" type="text"> 
     <input formControlName="nivel" type="range" min="1" max="4" value="3" > 
 
-            <button type="submit">
+            <button type="submit" [disabled]="form.invalid">
                 <i class="fa-solid fa-plus"></i>
             </button>
 

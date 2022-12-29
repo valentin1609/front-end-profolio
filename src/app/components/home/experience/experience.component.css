@@ -2,10 +2,12 @@ main{
     min-height: 100vh;
     height: 100%;
     width: 100%;
-    background-color: black;
+    background: url(../../../../assets/images/fondonuevo.png);
+    background-size: cover;
+    background-position: bottom;
 }
 
-main h1, p{
+.text h1, .text p{
     margin-left: 20px;
 }
 
@@ -23,7 +25,7 @@ main h1, p{
     z-index: 100;
   }
   
-  p{
+  .banner p{
     color: black;
     font-weight: 700;
   }

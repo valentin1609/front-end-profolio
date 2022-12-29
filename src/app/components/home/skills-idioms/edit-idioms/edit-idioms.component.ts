@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SkillsIdiomsService } from 'src/app/services/skills-idioms.service';
 import { Idiom } from 'src/app/services/skills-idiomsModel';
 
@@ -14,8 +14,8 @@ export class EditIdiomsComponent implements OnInit {
 
   constructor(private servIdioms:SkillsIdiomsService, private formBuilder : FormBuilder) {
     this.form = this.formBuilder.group({
-      nombre: [],
-      nivel:[]
+      nombre: [,Validators.required],
+      nivel:[,Validators.required]
       })
    }
 
@@ -25,6 +25,7 @@ export class EditIdiomsComponent implements OnInit {
 
   onSubmit(value: Idiom) : void{
     this.addIdiom(value);
+    this.form.reset();
   }
 
   idioms : Idiom[] = [];

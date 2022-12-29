@@ -24,6 +24,7 @@ export class EditProyectsComponent implements OnInit {
 
   onSubmit(value: Proyect): void {
     this.addProyect(value);
+    this.form.reset();
   }
 
   ngOnInit(): void {

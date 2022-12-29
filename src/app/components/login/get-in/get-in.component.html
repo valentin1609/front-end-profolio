@@ -3,9 +3,8 @@
     <div class="form">
         <div class="head">
             <h1>WELCOME!</h1>
-            
         </div>
-        
+
         <form action="" [formGroup]="loginForm" (ngSubmit)="onLogin($event)" >
 
             <!-- username -->
@@ -24,7 +23,9 @@
         </form>
         
         <div class="foot">
-            <a routerLink="/home">enter as a guest</a>
+            <label *ngIf="status == 401"> <i class="fa-solid fa-triangle-exclamation"></i> incorrect login, try again or</label>
+            <label *ngIf="status == 0"> <i class="fa-solid fa-triangle-exclamation"></i> unknown error, please try later</label>
+            <a (click)="onGuest()">enter as a guest</a>
         </div>
     </div>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SkillsOthersService } from 'src/app/services/skills-others.service';
 import { OtherSkill } from 'src/app/services/skills-othersModel';
 
@@ -14,12 +14,13 @@ export class EditOthersComponent implements OnInit {
 
   constructor(private servOS:SkillsOthersService, private formBuilder : FormBuilder) {
     this.form = this.formBuilder.group({
-      nombre: []
+      nombre: [,Validators.required]
       })
   }
 
   onSubmit(value:OtherSkill): void {
     this.addOtherSkill(value);
+    this.form.reset();
   } 
 
   ngOnInit(): void {

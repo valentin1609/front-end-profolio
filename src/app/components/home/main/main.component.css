@@ -1,16 +1,17 @@
 main {
   display: flex;
   justify-content: center;
-  background-color: black;
-  height: 100%;
-
+  align-items: center;
+  height: calc(100vh - 80px);
 }
 .principal {
   margin: 40px 0 20px 0;
   height: fit-content;
   width: 80%;
+  max-width: 1100px;
   border: solid 1px white;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .header {
@@ -36,6 +37,9 @@ main {
   aspect-ratio: 1/1;
   color: black;
 }
+#edit label, #edit i {
+  cursor: pointer;
+}
 
 
 .showInfo {
@@ -52,12 +56,12 @@ main {
 
 .imgdiv {
   width: 100%;
-  min-width: 10vw;
-  max-width: 30vw;
+  
 }
 .imgdiv img {
   width: 100%;
   min-width: 150px;
+  max-width: 30vw;
 }
 
 .information {
@@ -65,6 +69,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 .headInfo{
     width: 100%;
@@ -72,8 +77,10 @@ main {
     flex-direction: column;
     align-items: flex-start;
 }
-p {
+#presentacion {
+  align-self: flex-start;
   text-align: justify;
+  margin-bottom: 1em;
 }
 
 .items {
@@ -93,6 +100,10 @@ button:hover {
 
 .headInfoMovile {
   display: none;
+}
+
+a {
+  color: white;
 }
 
 @media only screen and (max-width: 730px) {
@@ -125,4 +136,40 @@ button:hover {
   .headInfo {
     display: none;
   }
+}
+
+@media only screen and (max-width: 850px){
+  main {
+    height: auto;
+    padding-bottom: 10%;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .showInfo {
+  display: flex;
+  flex-direction: column;
+  }
+  .headInfoMovile {
+    display: none;
+  }
+  .headInfo {
+    display: flex;
+  }
+  .profile{
+    width: 100%;
+  }
+  .information{
+    width: 100%;
+  }
+.profile{
+  padding: 0;
+  justify-content: flex-start;
+  padding-left: 1em;
+}
+  .imgdiv {
+    width: fit-content;
+    align-self: flex-start;
+  }
+
 }

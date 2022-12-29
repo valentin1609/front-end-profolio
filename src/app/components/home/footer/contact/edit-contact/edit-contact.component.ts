@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ContactService } from 'src/app/services/contact.service';
 import { Contact } from 'src/app/services/contactModel';
 
@@ -14,13 +14,14 @@ export class EditContactComponent implements OnInit {
 
   constructor(private servContact: ContactService, private formBuilder : FormBuilder) { 
     this.form = this.formBuilder.group({
-      nombre: [],
+      nombre: [,Validators.required],
       url:[]
       })
   }
 
   onSubmit(value: Contact) : void{
     this.addContact(value);
+    this.form.reset();
   }
 
   ngOnInit(): void {

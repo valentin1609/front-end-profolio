@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ɵNgNoValidate } from '@angular/forms';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SkillsService } from 'src/app/services/skills.service';
 import { Skills } from 'src/app/services/skillsModel';
 
@@ -8,13 +8,15 @@ import { Skills } from 'src/app/services/skillsModel';
   templateUrl: './skills.component.html',
   styleUrls: ['./skills.component.css'],
 })
-export class SkillsComponent implements OnInit {
+export class SkillsComponent implements OnInit, OnDestroy {
 
   skills : Skills[] = [];
 
   constructor(private servSkills:SkillsService) {}
 
   edit? : boolean;
+
+  private subs? : Subscription;
 
   ngOnInit(): void {
     this.getSkills();
@@ -25,12 +27,21 @@ export class SkillsComponent implements OnInit {
     } 
     else {this.edit = false}
   }
+  ngOnDestroy(): void {
+    this.subs?.unsubscribe();
+  }
 
  
   getSkills():void{
     this.servSkills.getSkills().subscribe(data => { 
       this.skills = data;
     });
+
+    this.subs?.add(
+      this.servSkills.getSkills().subscribe(data => { 
+        this.skills = data;
+      })
+    )
   }
 
 

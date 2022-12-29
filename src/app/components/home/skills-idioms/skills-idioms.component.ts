@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SkillsIdiomsService } from 'src/app/services/skills-idioms.service';
 import { Idiom } from 'src/app/services/skills-idiomsModel';
 
@@ -7,9 +8,9 @@ import { Idiom } from 'src/app/services/skills-idiomsModel';
   templateUrl: './skills-idioms.component.html',
   styleUrls: ['./skills-idioms.component.css']
 })
-export class SkillsIdiomsComponent implements OnInit {
+export class SkillsIdiomsComponent implements OnInit, OnDestroy {
 
-
+  private subs?: Subscription;
 
   constructor(private servIdioms:SkillsIdiomsService, ) { }
 
@@ -17,6 +18,10 @@ export class SkillsIdiomsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getIdioms();
+  }
+
+  ngOnDestroy(): void {
+    this.subs?.unsubscribe();
   }
 
 
@@ -27,6 +32,13 @@ export class SkillsIdiomsComponent implements OnInit {
       this.idioms = data;
       
     });
+
+    this.subs?.add(
+      this.servIdioms.getIdioms().subscribe(data => { 
+        this.idioms = data;
+        
+      })
+    )
   }
 
 

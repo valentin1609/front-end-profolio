@@ -1,6 +1,7 @@
 body {
     margin: 0;
     color: white;
+    min-width: 310px;
 }
 *{
     text-decoration: none;

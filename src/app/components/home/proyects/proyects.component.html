@@ -48,7 +48,7 @@
         <span *ngIf="mostrar">
             <section class="cards" *ngFor="let proyect of proyects">
 
-                <div class="card" href="#">
+                <div class="card" >
 
                     <img class="card-img" [src]="proyect.foto">
 
@@ -56,7 +56,7 @@
                         <h4>{{proyect.nombre}}</h4>
 
                         <p> {{proyect.descripcion}} </p>
-                        <a href="{{proyect.url}}">{{proyect.url}}</a>
+                        <a href="{{proyect.url}}" target="_blank">{{proyect.url}}</a>
                     </div>
                 </div>
 

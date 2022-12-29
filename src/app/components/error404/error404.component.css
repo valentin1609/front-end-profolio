@@ -4,8 +4,20 @@ main{
     width: 100%;
     background-color: black;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+button{
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+    border: 1px solid white;
+    padding: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(20, 20, 20);
 }
 span{
     animation: linea 1.5s  infinite;;

@@ -1,5 +1,7 @@
 main {
-  background-color: black;
+  background: url(../../../../assets/images/fondonuevo.png);
+  background-size: cover;
+  background-position: center;
   height: fit-content;
 }
 

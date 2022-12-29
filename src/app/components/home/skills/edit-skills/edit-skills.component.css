@@ -49,3 +49,7 @@ form input {
  input {
     accent-color: black;
  }
+
+ form button[disabled] {
+  background-color: grey;
+ }

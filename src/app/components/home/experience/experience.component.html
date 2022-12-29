@@ -1,46 +1,48 @@
 <main>
     <app-header (propagar)="recibirDato($event)"></app-header>
 
-        <!-- cuadro de usuario -->
-        <div class="banner">
-            <!-- invitado -->
-            <div class="guest" *ngIf="isGuest">
-                <p>you are a guest :(</p>
-                <button routerLink="/login" id="login">
-                    login
-                </button>
-                <button routerLink="/new-account" id="signUp">
-                    sign up
-                </button>
-            </div>
-    
-            
-            <!-- usuario -->
-    
-            <div class="user" *ngIf="isUser">
-                <div class="recuadro">
-                <p>Hi Usuario</p>
-    
-                <a routerLink="/new-account">View profile</a> <br>
-                <a (click)="onlogOut()" >Exit</a>
-            
-                </div>
-            </div>
-    
-    
-            <!-- admin -->
-            <div class="admin" *ngIf="isAdmin">
-                <p>¡congratulations!</p>
-                <p>you are the admin ;)</p>
-                <button (click)="onlogOut()">log out</button>
-            </div>
-    
+    <!-- cuadro de usuario -->
+    <div class="banner">
+        <!-- invitado -->
+        <div class="guest" *ngIf="isGuest">
+            <p>you are a guest :(</p>
+            <button routerLink="/login" id="login">
+                login
+            </button>
+            <button routerLink="/new-account" id="signUp">
+                sign up
+            </button>
         </div>
-    
-    
-    <h1>Coming Soon...</h1>
-    <p>
-        Aun estoy buscando mi primera experiencia en el mundo IT, mientras tanto me sigo formando y practicando para mejorar
-    </p>
+
+
+        <!-- usuario -->
+
+        <div class="user" *ngIf="isUser">
+            <div class="recuadro">
+                <p>Hi Usuario</p>
+
+                <a routerLink="/new-account">View profile</a> <br>
+                <a (click)="onlogOut()">Exit</a>
+
+            </div>
+        </div>
+
+
+        <!-- admin -->
+        <div class="admin" *ngIf="isAdmin">
+            <p>¡congratulations!</p>
+            <p>you are the admin ;)</p>
+            <button (click)="onlogOut()">log out</button>
+        </div>
+
+    </div>
+
+    <div class="text">
+        <h1>Coming Soon...</h1>
+        <p>
+            Aun estoy buscando mi primera experiencia en el mundo IT, mientras tanto me sigo formando y practicando para
+            mejorar
+        </p>
+    </div>
 
 </main>
