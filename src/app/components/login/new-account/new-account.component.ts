@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NewUserService } from 'src/app/services/new-user.service';
+import { User } from 'src/app/services/new-userModel';
 
 @Component({
   selector: 'app-new-account',
@@ -10,13 +12,13 @@ import { Router } from '@angular/router';
 export class NewAccountComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private newUserService: NewUserService) {
     this.form = this.formBuilder.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       ocupacion: [''],
       empresa: [''],
-      username: ['', Validators.compose([Validators.required, Validators.minLength(3)]) ],
+      username: ['', Validators.required ],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       cpassword: ['', Validators.required],
@@ -48,33 +50,16 @@ export class NewAccountComponent implements OnInit {
     // // // // // // // // // // // // // // // // // //
   }
 
-  enviar(values:any){
-    console.log(values);
-    this.router.navigateByUrl("/login");
+  enviar(values:User){
+    this.newUserService.addUser(values).subscribe(
+      () => {
+        console.log(values);
+        alert("ususario guardado");
+        this.router.navigateByUrl("/login");
+      }
+    )
   }
 
-
-
-  get f (){return this.form.controls}
-
-
-
-
-//  get Password(){
-//   return this.form.get("password");
-// }
-
-// get Mail(){
-//  return this.form.get("email");
-// }
-
-// get MailValid() {
-//   return false
-// }
-
-// get PasswordValid(){
-//   return this.Password?.touched && !this.Password?.valid;
-// }
 
 
 
@@ -98,6 +83,4 @@ export class NewAccountComponent implements OnInit {
  
   // }
 
-   //this.router.navigateByUrl("../viewemployee");
-    //constructor(private router: Router) {}
 }
