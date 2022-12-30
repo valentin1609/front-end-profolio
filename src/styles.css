@@ -1,16 +1,38 @@
 body {
-    margin: 0;
-    color: white;
-    min-width: 310px;
+  margin: 0;
+  color: white;
+  min-width: 310px;
 }
-*{
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-a{
-    text-decoration-color: none;
-    text-decoration-style: none;
-    text-decoration-color: none;
+a {
+  text-decoration-color: none;
+  text-decoration-style: none;
+  text-decoration-color: none;
+}
+
+/* Works on Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255, 255, 255) rgb(0, 0, 0);
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: rgb(0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px 0 0 30px;
+  padding: 1px;
+  border: 1px solid rgb(0, 0, 0);
 }
