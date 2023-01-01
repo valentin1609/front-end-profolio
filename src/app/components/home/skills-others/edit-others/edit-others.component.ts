@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { SkillsOthersService } from 'src/app/services/skills-others.service';
 import { OtherSkill } from 'src/app/services/skills-othersModel';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-others',
@@ -12,7 +14,7 @@ export class EditOthersComponent implements OnInit {
 
   form : FormGroup;
 
-  constructor(private servOS:SkillsOthersService, private formBuilder : FormBuilder) {
+  constructor(private servOS:SkillsOthersService, private formBuilder : FormBuilder, private router:Router) {
     this.form = this.formBuilder.group({
       nombre: [,Validators.required]
       })
@@ -39,6 +41,16 @@ export class EditOthersComponent implements OnInit {
     this.servOS.deleteOtherSkill(id).subscribe(
       () => {
         this.getOtherSkills();
+      }, (errors) => {
+        console.log(errors);
+        if (errors.status == 401) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'your session has expired, please login again'
+          })
+          this.router.navigateByUrl('/');
+        }
       }
     );
   }
@@ -47,6 +59,17 @@ export class EditOthersComponent implements OnInit {
     this.servOS.addOtherSkill(skill).subscribe(
       ()=>{
         this.getOtherSkills();
+      }, 
+      (errors) => {
+        console.log(errors);
+        if (errors.status == 401) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'your session has expired, please login again'
+          })
+          this.router.navigateByUrl('/');
+        }
       }
     );
   }

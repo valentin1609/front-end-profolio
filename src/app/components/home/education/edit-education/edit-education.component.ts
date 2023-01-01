@@ -1,7 +1,9 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EducationService } from 'src/app/services/education.service';
 import { Education } from 'src/app/services/educationModel';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-education',
@@ -19,7 +21,7 @@ export class EditEducationComponent implements OnInit {
 
   constructor(
     private servEducation: EducationService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder, private router: Router
   ) {
     this.nombre = new ElementRef('input');
     this.instituto = new ElementRef('input');
@@ -60,6 +62,16 @@ export class EditEducationComponent implements OnInit {
   addEducation(education: Education) {
     this.servEducation.addEducation(education).subscribe(() => {
       this.getEducationlist();
+    }, (errors) => {
+      console.log(errors);
+      if (errors.status == 401) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'your session has expired, please login again'
+        })
+        this.router.navigateByUrl('/');
+      }
     });
   }
 
@@ -67,6 +79,17 @@ export class EditEducationComponent implements OnInit {
   deleteEducation(id: any): void {
     this.servEducation.deleteEducation(id).subscribe(() => {
       this.getEducationlist();
-    });
+    }, (errors) => {
+      console.log(errors);
+      if (errors.status == 401) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'your session has expired, please login again'
+        })
+        this.router.navigateByUrl('/');
+      }
+    }
+    );
   }
 }

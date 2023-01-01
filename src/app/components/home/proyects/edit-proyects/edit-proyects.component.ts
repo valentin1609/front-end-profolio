@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ProyectsService } from 'src/app/services/proyects.service';
 import { Proyect } from 'src/app/services/proyectsModel';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-proyects',
@@ -13,7 +15,7 @@ export class EditProyectsComponent implements OnInit {
 
   constructor(
     private servProyects: ProyectsService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder, private router: Router
   ) {
     this.form = this.formBuilder.group({
       nombre: [],
@@ -43,12 +45,34 @@ export class EditProyectsComponent implements OnInit {
     this.servProyects.addProyect(value).subscribe(
       () => {
       this.getProyects();
-    });
+    }, (errors) => {
+      console.log(errors);
+      if (errors.status == 401) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'your session has expired, please login again'
+        })
+        this.router.navigateByUrl('/');
+      }
+    }
+    );
   }
 
   deleteProyect(id: any): void {
     this.servProyects.deleteProyect(id).subscribe(() => {
       this.getProyects();
-    });
+    }, (errors) => {
+      console.log(errors);
+      if (errors.status == 401) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'your session has expired, please login again'
+        })
+        this.router.navigateByUrl('/');
+      }
+    }
+    );
   }
 }

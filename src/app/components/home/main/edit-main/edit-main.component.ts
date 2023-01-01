@@ -7,8 +7,10 @@ import {
   ViewChild,
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { InformationService } from 'src/app/services/information.service';
 import { Information } from 'src/app/services/informationModel';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-main',
@@ -31,7 +33,7 @@ export class EditMainComponent implements OnInit {
 
   constructor(
     private servInformation: InformationService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder, private router: Router
   ) {
     this.nombre = new ElementRef('input');
     this.apellido = new ElementRef('input');
@@ -90,8 +92,16 @@ export class EditMainComponent implements OnInit {
         
         this.save.emit(true); //se emite un evento para que vaya al inicio cuando tenga la respuesta
       },
-      (error) => {
-        console.log(error);
+      (errors) => {
+        console.log(errors);
+        if (errors.status == 401) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'your session has expired, please login again'
+          })
+          this.router.navigateByUrl('/');
+        }
       }
     );
   }

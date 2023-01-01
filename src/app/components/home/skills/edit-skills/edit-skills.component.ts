@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SkillsService } from 'src/app/services/skills.service';
 import { Skills } from 'src/app/services/skillsModel';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-skills',
@@ -68,7 +69,11 @@ export class EditSkillsComponent implements OnInit, OnDestroy {
       (errors) => {
         console.log(errors);
         if (errors.status == 401) {
-          alert('su sesión ha experado, por favor inicie sesión nuevamente');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'your session has expired, please login again'
+          })
           this.router.navigateByUrl('/');
         }
       }
@@ -83,7 +88,11 @@ export class EditSkillsComponent implements OnInit, OnDestroy {
       (errors) => {
         console.log(errors);
         if (errors.status == 401) {
-          alert('su sesión ha experado, por favor inicie sesión nuevamente');
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'your session has expired, please login again'
+          })
           this.router.navigateByUrl('/');
         }
       }
