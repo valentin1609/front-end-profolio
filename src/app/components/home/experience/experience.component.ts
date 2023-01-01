@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth-service.service';
+import { InformationService } from 'src/app/services/information.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-experience',
@@ -30,7 +33,25 @@ export class ExperienceComponent implements OnInit {
     }
   }
 
-  constructor(private authService:AuthService) { }
+  loading : boolean = true;
+
+  constructor(private authService:AuthService, private infoServ: InformationService, private router: Router) {
+    this.infoServ.getInformation().subscribe(
+      () => {
+        this.loading = false;
+      },
+      (errors) => {
+        if (errors.status == 0) {
+          Swal.fire(
+            'unknown error',
+            'please try later',
+            'question'
+          )
+        }
+        this.router.navigateByUrl('/')
+      }
+    );
+   }
 
   ngOnInit(): void {
   }

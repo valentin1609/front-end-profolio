@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth-service.service';
 import { InformationService } from 'src/app/services/information.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -40,7 +41,11 @@ export class HomeComponent implements OnInit {
       },
       (errors) => {
         if (errors.status == 0) {
-          alert('lo sentimos ha ocurrido un error en el servidor');
+          Swal.fire(
+            'unknown error',
+            'please try later',
+            'question'
+          )
         }
         this.router.navigateByUrl('/')
       }

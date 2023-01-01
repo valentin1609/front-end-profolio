@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NewUserService } from 'src/app/services/new-user.service';
 import { User } from 'src/app/services/new-userModel';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-account',
@@ -53,10 +54,28 @@ export class NewAccountComponent implements OnInit {
   enviar(values:User){
     this.newUserService.addUser(values).subscribe(
       () => {
-        alert("saved user");
+
+        Swal.fire(
+          'saved user',
+          '',
+          'success'
+        )
         this.router.navigateByUrl("/login");
       }, (errors) => {
-        alert(errors.error.mensaje)
+        if(errors.status == 0){
+          Swal.fire(
+            'unknown error',
+            'please try later',
+            'question'
+          )
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: errors.error.mensaje
+          })
+        }
+
       }
     )
   }

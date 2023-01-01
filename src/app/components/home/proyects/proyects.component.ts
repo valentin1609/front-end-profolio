@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'src/app/services/auth-service.service';
 import { ProyectsService } from 'src/app/services/proyects.service';
 import { Proyect } from 'src/app/services/proyectsModel';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-proyects',
@@ -11,11 +13,13 @@ import { Proyect } from 'src/app/services/proyectsModel';
 })
 export class ProyectsComponent implements OnInit, OnDestroy {
 
-  constructor(private servProyects: ProyectsService, private authService:AuthService) { }
+  constructor(private servProyects: ProyectsService, private authService:AuthService, private router : Router) { }
 
   edit? : boolean;
 
   private subs?: Subscription;
+
+  loading : boolean = true;
 
   ngOnInit(): void {
     this.getProyects();
@@ -36,7 +40,19 @@ export class ProyectsComponent implements OnInit, OnDestroy {
   getProyects(): void{
     this.servProyects.getProyects().subscribe((data) => {
       this.proyects = data;
-    })
+      this.loading = false;
+    }, (errors) => {
+      if (errors.status == 0) {
+        Swal.fire(
+          'unknown error',
+          'please try later',
+          'question'
+        )
+      }
+      this.router.navigateByUrl('/')
+    }
+    
+    )
 
     this.subs?.add(
       this.servProyects.getProyects().subscribe((data) => {
