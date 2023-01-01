@@ -9,54 +9,57 @@
     <div class="header-right">
 
         <div class="seccions">
-            <button  routerLink="/home"
-            [ngStyle]="{'border-bottom': ruta == '/home' ? 'solid 3px white' : ''}">
+            <button routerLink="/home" [ngStyle]="{'border-bottom': ruta == '/home' ? 'solid 3px white' : ''}">
                 home</button>
         </div>
 
-        <div class="seccions" >
-            <button routerLink="/proyects" 
-            [ngStyle]="{'border-bottom': ruta == '/proyects' ? 'solid 3px white' : ''}">
-            proyects</button>
+        <div class="seccions">
+            <button routerLink="/proyects" [ngStyle]="{'border-bottom': ruta == '/proyects' ? 'solid 3px white' : ''}">
+                proyects</button>
         </div>
-        <div class="seccions" >
-            <button routerLink="/experience" 
-            [ngStyle]="{'border-bottom': ruta == '/experience' ? 'solid 3px white' : ''}">
-            experience</button>
+        <div class="seccions">
+            <button routerLink="/experience"
+                [ngStyle]="{'border-bottom': ruta == '/experience' ? 'solid 3px white' : ''}">
+                experience</button>
         </div>
 
         <div id="link">
             <a href="https://github.com/valentin1609" target="_blank"> GitHub </a>
         </div>
 
-        <div id="user">
-           <label *ngIf="isUser" (click)="onUser()"> <i class="fa-solid fa-user"></i> </label>
-           <label *ngIf="isAdmin" (click)="onAdmin()"> <i class="fa-solid fa-user-tie"></i> </label>
+
+        <div id="user" [ngStyle]="{'border': ruta == '/user-profile' ? 'solid 1px white' : ''}">
+
+            <label *ngIf="isUser" (click)="onUser()" [ngStyle]="{'cursor': ruta == '/user-profile' ? 'initial' : ''}">
+                <i class="fa-solid fa-user" [ngStyle]="{'cursor': ruta == '/user-profile' ? 'initial' : ''}"></i>
+            </label>
+            <label *ngIf="isAdmin" (click)="onAdmin()"> <i class="fa-solid fa-user-tie"></i> </label>
             <label *ngIf="isGuest" (click)="onGuest()"> <i class="fa-solid fa-user-secret"></i> </label>
+
         </div>
+
+
         <div class="menuIcon" (click)="onMenu()">
-            <label> <i class="fa-solid fa-bars"></i> </label> 
+            <label> <i class="fa-solid fa-bars"></i> </label>
         </div>
 
         <div class="menuMovile" *ngIf="!mostrar">
-            
+
             <div class="seccionMovile">
-                <a routerLink="/home"
-                [ngStyle]="{'border-bottom': ruta == '/home' ? 'solid 3px white' : ''}">
-                home</a>
+                <a routerLink="/home" [ngStyle]="{'border-bottom': ruta == '/home' ? 'solid 3px white' : ''}">
+                    home</a>
             </div>
             <div class="seccionMovile">
-                <a routerLink="/proyects"
-                [ngStyle]="{'border-bottom': ruta == '/proyects' ? 'solid 3px white' : ''}">
-                proyects</a>
+                <a routerLink="/proyects" [ngStyle]="{'border-bottom': ruta == '/proyects' ? 'solid 3px white' : ''}">
+                    proyects</a>
             </div>
             <div class="seccionMovile">
                 <a routerLink="/experience"
-                [ngStyle]="{'border-bottom': ruta == '/experience' ? 'solid 3px white' : ''}">
-                experience</a>
+                    [ngStyle]="{'border-bottom': ruta == '/experience' ? 'solid 3px white' : ''}">
+                    experience</a>
             </div>
             <div id="linkMovile">
-                 <a href="https://github.com/valentin1609" target="_blank" id="git"> GitHub </a> 
+                <a href="https://github.com/valentin1609" target="_blank" id="git"> GitHub </a>
             </div>
         </div>
 

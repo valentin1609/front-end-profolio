@@ -1,3 +1,40 @@
-<div>
-<p>profile works!</p>
-</div>
+<main>
+    <app-header></app-header>
+
+    <div class="back">
+
+        <div class="principal">
+
+            <div class="head">
+                <i class="fa-regular fa-user"></i>
+            </div>
+
+            <div class="seccion">
+                <label>nombre:</label>
+                <p> {{perfil?.nombre}} </p>
+            </div>
+            <div class="seccion">
+                <label>apellido:</label>
+                <p> {{perfil?.apellido}}</p>
+            </div>
+            <div class="seccion">
+                <label>ocupacion:</label>
+                <p> {{perfil?.ocupacion}} </p>
+            </div>
+            <div class="seccion">
+                <label>empresa:</label>
+                <p> {{perfil?.empresa}} </p>
+            </div>
+    
+
+             
+                    <button (click)="onlogOut()" >
+                        Log Out
+                    </button>
+              
+          
+
+
+        </div>
+    </div>
+</main>

@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     let userAuth = JSON.parse( sessionStorage.getItem('user') || '{}' );
-      console.log(userAuth);
       if (userAuth.authorities) {
         if (userAuth.authorities.length == 1) {this.user()}
         if (userAuth.authorities.length == 2) {this.admin()}

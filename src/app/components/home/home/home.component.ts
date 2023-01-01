@@ -31,12 +31,13 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  constructor(
-    private authService: AuthService,
-    private infoServ: InformationService, private router: Router
-  ) {
+  loading : boolean = true;
+
+  constructor(private authService: AuthService,private infoServ: InformationService, private router: Router) {
     this.infoServ.getInformation().subscribe(
-      () => {},
+      () => {
+        this.loading = false;
+      },
       (errors) => {
         if (errors.status == 0) {
           alert('lo sentimos ha ocurrido un error en el servidor');

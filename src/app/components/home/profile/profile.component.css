@@ -1,7 +1,65 @@
-p{
-    color: aliceblue;
+main {
+  background: url(../../../../assets/images/fondonuevo.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
 }
-div{
-    height: 100vh;
+.back {
+  height: calc(100vh - 80px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principal{
+  height: fit-content;
+ 
+  max-width: 600px;
+  border: solid 1px white;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.head {
+ text-align: center;
+ font-size: 3em;
+}
+.seccion {
+    border: 1px solid white;
+    padding: 0 1em;
+    width: 60%;
+    min-width: 270px;
+    height: 3em;
+    position: relative;
+}
+.seccion p{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.seccion label {
+    position: absolute;
+    top: -12px;
     background-color: black;
+}
+
+
+button{
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 20px;
+  padding: 0.3em 0.5em;
+  cursor: pointer;
 }

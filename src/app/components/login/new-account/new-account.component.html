@@ -9,51 +9,46 @@
 
                 <div class="input">
                     <div><label for=""
-                            *ngIf="form.get('nombre')?.touched && form.get('nombre')?.hasError('required')">campo
-                            requerido*</label></div>
-                    <input type="text" placeholder="nombre*" formControlName="nombre">
+                            *ngIf="form.get('nombre')?.touched && form.get('nombre')?.hasError('required')">required
+                            value*</label></div>
+                    <input type="text" placeholder="name*" formControlName="nombre">
                 </div>
                 <div class="input">
                     <div><label for=""
-                            *ngIf="form.get('apellido')?.touched && form.get('apellido')?.hasError('required')">campo
-                            requerido*</label></div>
-                    <input type="text" placeholder="apellido*" formControlName="apellido">
+                            *ngIf="form.get('apellido')?.touched && form.get('apellido')?.hasError('required')">required
+                            value*</label></div>
+                    <input type="text" placeholder="surname*" formControlName="apellido">
                 </div>
                 <div class="input">
                     <div></div>
-                    <input type="text" placeholder="ocupacion" formControlName="ocupacion">
+                    <input type="text" placeholder="occupation" formControlName="ocupacion">
                 </div>
                 <div class="input">
                     <div></div>
-                    <input type="text" placeholder="empresa" formControlName="empresa">
+                    <input type="text" placeholder="company" formControlName="empresa">
                 </div>
                 <div class="input">
                     <div><label for=""
-                            *ngIf="form.get('username')?.touched && form.get('username')?.hasError('required')">campo
-                            requerido*</label> <label for=""
-                            *ngIf="form.get('username')?.touched && form.get('username')?.hasError('minlength')">minimo
-                            de 3 caracteres</label></div>
+                            *ngIf="form.get('username')?.touched && form.get('username')?.hasError('required')">required
+                            value*</label>
+                    </div>
                     <input type="text" placeholder="username*" formControlName="username">
                 </div>
 
                 <div class="input">
                     <div><label for=""
-                            *ngIf="form.get('email')?.touched && form.get('email')?.hasError('required')">campo
-                            requerido*</label> <label for=""
-                            *ngIf="form.get('email')?.touched && form.get('email')?.hasError('email')">email
-                            invalido</label></div>
+                            *ngIf="form.get('email')?.touched && form.get('email')?.hasError('required')">required value*</label> <label for=""
+                            *ngIf="form.get('email')?.touched && form.get('email')?.hasError('email')">invalid email</label></div>
                     <input type="email" placeholder="email*" formControlName="email">
                 </div>
                 <div class="input">
                     <div><label for=""
-                            *ngIf="form.get('password')?.touched && form.get('password')?.hasError('required')">campo
-                            requerido*</label></div>
+                            *ngIf="form.get('password')?.touched && form.get('password')?.hasError('required')">required value*</label></div>
                     <input type="password" placeholder="password*" formControlName="password">
                 </div>
                 <div class="input">
                     <div><label for=""
-                            *ngIf="form.get('cpassword')?.touched && form.get('cpassword')?.hasError('required')">campo
-                            requerido*</label>
+                            *ngIf="form.get('cpassword')?.touched && form.get('cpassword')?.hasError('required')">required value*</label>
                         <label for="" *ngIf="form.get('cpassword')?.touched && (!matchingControl)">different
                             password</label>
                     </div>

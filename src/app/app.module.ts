@@ -32,6 +32,8 @@ import { EditIdiomsComponent } from './components/home/skills-idioms/edit-idioms
 import { EditOthersComponent } from './components/home/skills-others/edit-others/edit-others.component';
 import { EditContactComponent } from './components/home/footer/contact/edit-contact/edit-contact.component';
 import { EditProyectsComponent } from './components/home/proyects/edit-proyects/edit-proyects.component';
+import { LoadingComponent } from './components/home/home/loading/loading.component';
+
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { EditProyectsComponent } from './components/home/proyects/edit-proyects/
     EditIdiomsComponent,
     EditOthersComponent,
     EditContactComponent,
-    EditProyectsComponent
+    EditProyectsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

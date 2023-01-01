@@ -53,34 +53,13 @@ export class NewAccountComponent implements OnInit {
   enviar(values:User){
     this.newUserService.addUser(values).subscribe(
       () => {
-        console.log(values);
-        alert("ususario guardado");
+        alert("saved user");
         this.router.navigateByUrl("/login");
+      }, (errors) => {
+        alert(errors.error.mensaje)
       }
     )
   }
 
-
-
-
-
-  // enviar(event: Event) {
-  //   // Detenemos la propagación o ejecución del compotamiento
-  //   //submit de un form
-  //   event.preventDefault;
-  //   if (this.form.valid) {
-  //     // Llamamos a nuestro servicio para enviar los datos al
-  //     // servidor
-  //     // También podríamos ejecutar alguna lógica extra
-  //     alert('Todo salio bien ¡Enviar formuario!');
-  //     console.log(this.form.value)
-  //   } else {
-  //     // Corremos todas las validaciones para que se ejecuten los
-  //     // mensajes de error en el template
-  //     this.form.markAllAsTouched();
-  //     console.log('fallaste');
-  //   }
- 
-  // }
 
 }
