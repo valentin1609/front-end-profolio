@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  loading : boolean = true;
+
+  constructor() {
+    //para darle tiempo de cargar al fondo
+    setTimeout(() => {
+      this.loading = false;
+    }, 500);
+   }
+
+  
 
   ngOnInit(): void {
+
   }
 
 }
