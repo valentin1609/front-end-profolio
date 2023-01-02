@@ -1,5 +1,6 @@
 main {
-  background: url(../../../../assets/images/fondonuevo.png);
+  /* background: url(../../../../assets/images/fondonuevo.png); */
+  background-image: url(https://i.ibb.co/xDkbTNC/loginnuevo.jpg);
   background-size: cover;
   background-position: center;
   min-height: 100vh;

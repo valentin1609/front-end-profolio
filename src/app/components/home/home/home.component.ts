@@ -37,7 +37,9 @@ export class HomeComponent implements OnInit {
   constructor(private authService: AuthService,private infoServ: InformationService, private router: Router) {
     this.infoServ.getInformation().subscribe(
       () => {
-        this.loading = false;
+        setTimeout(() => {
+          this.loading = false;
+        }, 500);
       },
       (errors) => {
         if (errors.status == 0) {
