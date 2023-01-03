@@ -8,7 +8,7 @@ import { OtherSkill } from './skills-othersModel';
 })
 export class SkillsOthersService {
 
-  url="http://localhost:8080/other-skills/";
+  url="https://porfolio-valentin1609.koyeb.app/other-skills/";
 
   constructor(private http:HttpClient) { }
 

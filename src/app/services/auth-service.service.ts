@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  url="http://localhost:8080/auth";
+  url="https://porfolio-valentin1609.koyeb.app/auth";
 
   userlogged : BehaviorSubject<any>;
 

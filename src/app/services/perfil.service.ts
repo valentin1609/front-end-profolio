@@ -8,7 +8,7 @@ import { Perfil } from './perfilModel';
 })
 export class PerfilService {
 
-  url="http://localhost:8080/perfil/";
+  url="https://porfolio-valentin1609.koyeb.app/perfil/";
 
   constructor(private http : HttpClient) { }
 

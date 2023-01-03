@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SkillsService {
-  url="http://localhost:8080/skills/";
+  // url="http://localhost:8080/skills/";
+  url="https://porfolio-valentin1609.koyeb.app/skills/"; 
+
 
 constructor(private http:HttpClient) { }
 

@@ -9,7 +9,7 @@ import { Contact } from './contactModel';
 export class ContactService {
 
 
-  url="http://localhost:8080/contact/";
+  url="https://porfolio-valentin1609.koyeb.app/contact/";
 
   constructor(private http:HttpClient) { }
 

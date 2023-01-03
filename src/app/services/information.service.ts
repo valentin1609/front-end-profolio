@@ -7,7 +7,10 @@ import { Information } from './informationModel';
   providedIn: 'root'
 })
 export class InformationService {
-  url="http://localhost:8080/information/";
+  // url="http://localhost:8080/information/";
+  url="https://porfolio-valentin1609.koyeb.app/information/";
+
+  
 
   constructor(private http:HttpClient) { }
   

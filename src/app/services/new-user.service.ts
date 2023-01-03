@@ -7,7 +7,7 @@ import { User } from './new-userModel';
 })
 export class NewUserService {
 
-  url="http://localhost:8080/auth/";
+  url="https://porfolio-valentin1609.koyeb.app/auth/";
 
   constructor(private http : HttpClient) { }
 

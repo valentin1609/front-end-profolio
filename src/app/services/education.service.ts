@@ -8,7 +8,7 @@ import { Education } from './educationModel';
 })
 export class EducationService {
 
-  url="http://localhost:8080/education/";
+  url="https://porfolio-valentin1609.koyeb.app/education/";
 
   constructor(private http:HttpClient) { }
 

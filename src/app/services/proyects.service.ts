@@ -9,7 +9,7 @@ import { Proyect } from './proyectsModel';
 export class ProyectsService {
 
 
-  url="http://localhost:8080/proyects/";
+  url="https://porfolio-valentin1609.koyeb.app/proyects/";
 
   constructor(private http:HttpClient) { }
 

@@ -8,7 +8,7 @@ import { Idiom } from './skills-idiomsModel';
 })
 export class SkillsIdiomsService {
 
-  url="http://localhost:8080/idioms/";
+  url="https://porfolio-valentin1609.koyeb.app/idioms/";
 
   constructor(private http:HttpClient) { }
 
