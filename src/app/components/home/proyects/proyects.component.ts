@@ -64,6 +64,15 @@ export class ProyectsComponent implements OnInit, OnDestroy {
   mostrar = true;
   onEdit() {
     this.mostrar = !this.mostrar;
+
+    // si se muestra el edit: me desuscribo del servicio
+    if (this.mostrar == false) {
+      this.ngOnDestroy();
+    }
+    //si se vuelve al presionar el boton me resuscribo al servicio
+    if (this.mostrar == true) {
+      this.ngOnInit();
+    }
   }
 
 
