@@ -1,5 +1,6 @@
 <main>
-    <div class="principal">
+    <app-loading *ngIf="loading" id="loading"></app-loading> 
+    <div class="principal" *ngIf="!loading">
         <div class="center">
 
             <div class="head">

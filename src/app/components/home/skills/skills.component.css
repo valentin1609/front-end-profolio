@@ -6,6 +6,16 @@ main {
   padding-bottom: 10%;
 }
 
+#loading {
+  margin: 40px 0 20px 0;
+  height: 40vh;
+  width: 80%;
+  max-width: 1100px;
+  border: solid 1px white;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 .principal {
   margin: 40px 0 20px 0;
   height: fit-content;

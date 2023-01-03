@@ -16,6 +16,8 @@ export class SkillsComponent implements OnInit, OnDestroy {
 
   edit? : boolean;
 
+  loading : boolean = true;
+
   private subs? : Subscription;
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class SkillsComponent implements OnInit, OnDestroy {
   getSkills():void{
     this.servSkills.getSkills().subscribe(data => { 
       this.skills = data;
+      this.loading = false;
     });
 
     this.subs?.add(

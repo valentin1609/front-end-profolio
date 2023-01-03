@@ -18,6 +18,8 @@ export class EducationComponent implements OnInit, OnDestroy{
 
   edit? : boolean;
 
+  loading : boolean = true;
+
   ngOnInit(): void {
     this.getEducationlist();
 
@@ -35,6 +37,7 @@ export class EducationComponent implements OnInit, OnDestroy{
   getEducationlist():void {
     this.servEducation.getEducationlist().subscribe(data => {
       this.education = data;
+      this.loading = false;
     })
 
     this.subs?.add(

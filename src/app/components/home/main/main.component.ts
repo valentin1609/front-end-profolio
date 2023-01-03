@@ -19,6 +19,8 @@ export class MainComponent implements OnInit, OnDestroy {
 
   edit?: boolean;
 
+  loading : boolean = true;
+
   ngOnInit(): void {
     this.getInfo(); //llamo al servicio con los datos
     //añado el servico a mis suscripciones:
@@ -40,6 +42,7 @@ export class MainComponent implements OnInit, OnDestroy {
   getInfo() {
     this.servInformation.getInformation().subscribe((data) => {
       this.perfil = data;
+      this.loading = false;
     });
 
     this.subs?.add(

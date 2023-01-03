@@ -18,6 +18,15 @@ main {
   align-items: center;
   justify-content: center;
 }
+#loading {
+  margin: 40px 0 20px 0;
+  height: 30vh;
+  width: 80%;
+  max-width: 1100px;
+  border: solid 1px white;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.6);
+}
 
 .center {
   width: 80%;

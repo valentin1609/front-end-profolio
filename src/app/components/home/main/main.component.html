@@ -1,6 +1,7 @@
 <main>
 
-    <div class="principal">
+    <app-loading *ngIf="loading" id="loading"></app-loading> 
+    <div class="principal" *ngIf="!loading">
 
         <div class="header">
             <div *ngIf="edit" id="edit" (click)="onEdit()">
