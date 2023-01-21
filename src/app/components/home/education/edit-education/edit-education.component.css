@@ -29,6 +29,10 @@
     font-size: 2em;
   }
 
+  .icons {
+    display: flex;
+  }
+
 
   
 button{

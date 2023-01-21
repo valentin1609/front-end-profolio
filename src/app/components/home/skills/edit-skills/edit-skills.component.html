@@ -1,15 +1,21 @@
-<table>
+<table *ngIf="!mostrar">
     <thead>
         <tr>
             <th>name</th>
             <th>level</th>
+            <th>edit</th>
             <th>delete</th>
         </tr>
     </thead>
-    <tbody >
+    <tbody>
         <tr *ngFor="let skill of skills">
             <td>{{ skill.nombre }}</td>
             <td>{{ skill.nivel }}/4</td>
+            <td>
+                <button (click)="onEditIcon(skill.id)">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+            </td>
             <td>
                 <button (click)="deleteSkill(skill.id)">
                     <i class="fa-solid fa-delete-left"></i>
@@ -19,18 +25,38 @@
 
     </tbody>
 
+
 </table>
 
-<form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+<!-- MODAL MODAL MODAL MODAL MODAL MODAL MODAL  -->
+<div *ngIf="mostrar" class="modal">
+    <form [formGroup]="editForm" (ngSubmit)="onSubForm(editForm.value)">
 
-    <div>
-    <input formControlName="nombre" type="text"> 
-    <input formControlName="nivel" type="range" min="1" max="4" value="3" > 
+        <div>
+            <input formControlName="nombre" type="text">
+            <input formControlName="nivel" type="range" min="1" max="4" value="3">
 
-            <button type="submit" [disabled]="form.invalid">
-                <i class="fa-solid fa-plus"></i>
+            <button type="submit" [disabled]="editForm.invalid">
+                <i class="fa-regular fa-floppy-disk"></i>
             </button>
 
         </div>
+
+    </form>
+</div>
+<!-- -- -- --- --- --- --- - -- - - - - - - - -  -->
+
+
+<form *ngIf="!mostrar" [formGroup]="form" (ngSubmit)="onSubmit(form.value)" >
+
+    <div>
+        <input formControlName="nombre" type="text">
+        <input formControlName="nivel" type="range" min="1" max="4" value="3">
+
+        <button type="submit" [disabled]="form.invalid">
+            <i class="fa-solid fa-plus"></i>
+        </button>
+
+    </div>
 
 </form>

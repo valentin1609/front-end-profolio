@@ -7,8 +7,54 @@ main{
     background-position: bottom;
 }
 
-.text h1, .text p{
-    margin-left: 20px;
+
+.principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.principal span {
+  width: 80%;
+}
+
+/* items */
+.item {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 0.5em 1em;
+  margin-bottom: 0.5em;
+}
+
+
+
+
+
+
+
+
+/* edit */
+.head{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1em;
+}
+
+#edit {
+  cursor: pointer;
+  background-color: white;
+  font-size: 1.5em;
+  border-radius: 100%;
+  height: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1;
+  color: black;
+}
+i,label{
+  cursor: pointer;
 }
 
 

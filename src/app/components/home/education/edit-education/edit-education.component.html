@@ -1,4 +1,5 @@
-<div class="item-container" *ngFor="let edu of education">
+<span *ngIf="!modal">
+<div  class="item-container" *ngFor="let edu of education">
     <div class="item">
         <div class="info">
             <div class="date">
@@ -10,13 +11,42 @@
                 {{edu.instituto}}
             </div>
         </div>
-        <button (click)="onDelete(edu.id)">
-            <i class="fa-solid fa-trash-can"></i>
-        </button>
+        <div class="icons">
+            <button (click)="onEditItem(edu.id)">
+                <i class="fa-solid fa-pen"></i>
+            </button>
+            <button (click)="onDelete(edu.id)">
+                <i class="fa-solid fa-trash-can"></i>
+            </button>
+        </div>
     </div>
 </div>
+</span>
 
-<div class="item-container">
+
+<form *ngIf="modal" [formGroup]="editForm" (ngSubmit)="onSubEdit(editForm.value)">
+    <div class="item">
+
+        <div class="info">
+
+            <div class="date">
+                <input formControlName="fin" type="text" placeholder="">
+            </div>
+            <div class="input-nombre">
+                <input formControlName="nombre" type="text" placeholder="">
+                <input formControlName="instituto" type="text" placeholder="">
+            </div>
+
+        </div>
+
+        <button type="submit" [disabled]="editForm.invalid">
+            <i class="fa-solid fa-check"></i>
+        </button>
+
+    </div>
+</form>
+
+<div class="item-container" *ngIf="!modal">
 
     <div class="date">
         <button (click)="onAdd()" *ngIf="mostrar">

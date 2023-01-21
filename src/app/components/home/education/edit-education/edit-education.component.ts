@@ -18,6 +18,7 @@ export class EditEducationComponent implements OnInit {
   education: Education[] = [];
 
   form: FormGroup;
+  editForm : FormGroup;
 
   constructor(
     private servEducation: EducationService,
@@ -32,11 +33,36 @@ export class EditEducationComponent implements OnInit {
       instituto: [,Validators.required],
       fin: [,Validators.required],
     });
+
+
+    this.editForm = this.formBuilder.group({
+      nombre: [,Validators.required],
+      instituto: [,Validators.required],
+      fin: [,Validators.required],
+    });
   }
 
   ngOnInit(): void {
     this.getEducationlist();
   }
+
+
+  modal = false;
+  onEditItem(idItem:any){
+    this.modal = true
+    this.idItem = idItem;
+  }
+  idItem? : number;
+
+
+  onSubEdit(edu:Education){
+    edu.id = this.idItem;
+    console.log(edu)
+    this.editEducation(edu);
+  }
+
+
+
 
   mostrar = true;
   onAdd() {
@@ -73,6 +99,17 @@ export class EditEducationComponent implements OnInit {
         this.router.navigateByUrl('/');
       }
     });
+  }
+  
+  //edit service 
+  editEducation(education: Education) {
+    this.servEducation.editEducation(education).subscribe(
+      () => {
+        this.getEducationlist();
+        this.modal = false;
+      }
+
+    )
   }
 
   //delete services

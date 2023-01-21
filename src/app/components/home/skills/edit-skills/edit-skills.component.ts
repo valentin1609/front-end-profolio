@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -15,6 +15,8 @@ export class EditSkillsComponent implements OnInit, OnDestroy {
   subs?: Subscription;
 
   form: FormGroup;
+  editForm : FormGroup;
+
 
   constructor(
     private servSkills: SkillsService,
@@ -25,6 +27,12 @@ export class EditSkillsComponent implements OnInit, OnDestroy {
       nombre: [,Validators.required],
       nivel: [],
     });
+
+    this.editForm = this.formBuilder.group({
+      nombre: [,Validators.required],
+      nivel: []
+    })
+
   }
   //boton del formulario para añadir algo a la lista llamando a un metodo del servicio
   onSubmit(value: Skills): void {
@@ -35,8 +43,29 @@ export class EditSkillsComponent implements OnInit, OnDestroy {
     this.form.reset();
   }
 
+
+  mostrar : boolean = false;
+  onEditIcon(idSkill:any){
+    this.mostrar = true;
+    this.idSkill = idSkill; 
+  }
+
+  idSkill? : number;
+
+  onSubForm(skill:Skills): void {
+    skill.id = this.idSkill;
+
+    if (skill.nivel == null) {
+      skill.nivel = 3;
+    }
+
+    this.editSkill(skill);
+  }
+
   ngOnInit(): void {
     this.getSkills();
+
+    
 
     //añado los servicios a subs para despues desuscribirme
     this.subs?.add(
@@ -78,6 +107,16 @@ export class EditSkillsComponent implements OnInit, OnDestroy {
         }
       }
     );
+  }
+
+  editSkill(skill: Skills) { 
+    this.servSkills.editSkill(skill).subscribe(
+      () => {
+        this.getSkills();
+        this.mostrar = false;
+      }
+    )
+
   }
 
   deleteSkill(id: any) {

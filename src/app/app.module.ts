@@ -33,6 +33,7 @@ import { EditOthersComponent } from './components/home/skills-others/edit-others
 import { EditContactComponent } from './components/home/footer/contact/edit-contact/edit-contact.component';
 import { EditProyectsComponent } from './components/home/proyects/edit-proyects/edit-proyects.component';
 import { LoadingComponent } from './components/home/home/loading/loading.component';
+import { EditExperienceComponent } from './components/home/experience/edit-experience/edit-experience.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { LoadingComponent } from './components/home/home/loading/loading.compone
     EditOthersComponent,
     EditContactComponent,
     EditProyectsComponent,
-    LoadingComponent
+    LoadingComponent,
+    EditExperienceComponent
   ],
   imports: [
     BrowserModule,

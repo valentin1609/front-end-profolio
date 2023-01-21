@@ -1,4 +1,4 @@
-<app-loading *ngIf="loading"></app-loading> 
+<app-loading *ngIf="loading"></app-loading>
 <main *ngIf="!loading">
     <app-header (propagar)="recibirDato($event)"></app-header>
 
@@ -38,11 +38,31 @@
 
     </div>
 
-    <div class="text">
-        <h1>Coming Soon...</h1>
-        <p>
-            I am still looking for my first experience in the IT world, meanwhile I continue training and practicing to improve
-        </p>
+    <div class="principal">
+        <div class="head">
+            <div *ngIf="edit" id="edit" (click)="onEdit()">
+                <label *ngIf="mostrar"> <i class="fa-solid fa-pen"> </i> </label>
+                <label *ngIf="!mostrar"> <i class="fa-solid fa-xmark"> </i> </label>
+            </div>
+        </div>
+
+        <span *ngIf="!mostrar">
+            <app-edit-experience></app-edit-experience>
+        </span>
+
+        <span *ngIf="mostrar">
+
+            <div class="item" *ngFor="let exp of experiences">
+                <h3 class="nombre">{{exp.nombre}} | {{exp.empresa}}</h3>
+                <p class="description">{{exp.descripcion}}</p>
+                <div class="duracion">
+                    <p>{{exp.inicio}} - {{exp.fin}}</p>
+                </div>
+            </div>
+
+        </span>
+
     </div>
+
 
 </main>

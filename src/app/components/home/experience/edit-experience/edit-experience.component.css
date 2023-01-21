@@ -1,0 +1,32 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item_icon {
+    font-size: 20px;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 auto;
+}
+.form button {
+    width: 30%;
+    padding: 0.5em 0;
+    align-self: flex-end;
+}
+
+input, textarea {
+    margin: 0.2em;
+    background-color: black;
+    color: white;
+}
+
+button, i {
+    cursor: pointer;
+}

@@ -38,6 +38,7 @@ form input {
     color: white;
     border: none;
     font-size: 1.5em;
+    cursor: pointer;
  }
 
  form button{
@@ -53,3 +54,6 @@ form input {
  form button[disabled] {
   background-color: grey;
  }
+
+
+
