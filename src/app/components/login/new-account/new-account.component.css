@@ -2,7 +2,8 @@ body{
     background-image: url(https://i.postimg.cc/SN7R4WBL/loginnuevo.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
 }
 
 main{
@@ -10,6 +11,7 @@ main{
     align-items: center;
     justify-content: center;
     height: calc(100% - 80px);
+    padding: 10px 0;
 
 }
 .form{
@@ -17,6 +19,7 @@ main{
   border: white 2px solid; 
   height: 80vh;
   width: 80vw;
+  min-width: 220px;
   padding: 10px 40px;
   display: flex;
   align-items: center;
@@ -80,4 +83,28 @@ input{
 .create button[disabled]{
 transform: scale(1);
 color: rgb(99, 99, 99);
+}
+
+
+
+@media only screen and (max-width: 690px) {
+main {
+  height: 100%;
+}
+form {
+  flex-direction: column;
+}
+.form {
+  height: fit-content;
+  justify-content: center;
+  padding: 0;
+}
+.input{
+  width: 100%;
+}
+.create {
+  padding: 10px 0;
+}
+
+
 }

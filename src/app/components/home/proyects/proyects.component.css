@@ -17,6 +17,7 @@ main {
 }
 .card {
   width: 30%;
+  height: fit-content;
   margin-right: 2%;
   margin-bottom: 2%;
   background-color: rgb(26, 26, 26);
@@ -25,6 +26,7 @@ main {
   border-radius: 10px;
   color: #999;
 }
+
 
 .card-img {
   width: 100%;
@@ -36,10 +38,10 @@ main {
   padding: 0.1em 0.5em;
 }
 .card a {
-  display: flex;
-  justify-content: center;
-  padding: 5px 0;
+display: block;
   color: white;
+  width: 100%;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {

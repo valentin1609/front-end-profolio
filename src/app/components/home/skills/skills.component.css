@@ -3,7 +3,7 @@ main {
   justify-content: center;
   min-height: 100%;
   height: fit-content;
-  padding-bottom: 10%;
+  /* padding-bottom: 10%; */
 }
 
 #loading {
