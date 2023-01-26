@@ -1,27 +1,9 @@
 # Porfolio
+- HTML, CSS, Typescript y Angular. Consumiendo de la API REST desarrollada en back-end-porfolio.
+- Totalmente responsiva con puro HTML y CSS
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+Cuenta con una función de administrador que permite modificar la información, y la opción de registrarse como usuario o ingresar como invitado para ver la información. 
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Captura de pantalla_20230125_210603](https://user-images.githubusercontent.com/104102755/214870905-456cbaf2-a0ba-4511-9ecd-d2340f2b2e3b.png)
+![Captura de pantalla_20230125_210755](https://user-images.githubusercontent.com/104102755/214871012-64c51996-3388-4d8a-8311-79b75f43a1f5.png)
+![Captura de pantalla_20230125_210702](https://user-images.githubusercontent.com/104102755/214871069-31daf5f7-17d6-4c92-84af-a4cf08efca95.png)
